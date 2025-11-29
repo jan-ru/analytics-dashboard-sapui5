@@ -67,9 +67,15 @@ This application requires a modern browser with **Import Maps** support:
 ```
 sapui5/
 ├── index.html                      # Main entry point
-├── requirements.md                 # Project requirements
-├── design.md                       # Detailed design document
 ├── README.md                       # This file
+│
+├── docs/                          # Documentation
+│   ├── requirements.md            # Project requirements
+│   ├── design.md                  # Detailed design document
+│   ├── TILE_TYPES.md              # Complete guide to all 8 tile types
+│   ├── TESTING.md                 # Testing guide
+│   ├── VERSION.md                 # Version history
+│   └── ... (more documentation)
 │
 ├── assets/
 │   └── css/
@@ -280,9 +286,11 @@ MIT License - Feel free to use this project for learning and development.
 For questions or issues:
 
 1. Check the **About** page within the application
-2. Review the `design.md` file for detailed architecture
-3. Check the `requirements.md` file for original specifications
-4. Open an issue on GitHub
+2. Review the `docs/design.md` file for detailed architecture
+3. Check the `docs/requirements.md` file for original specifications
+4. See `docs/TESTING.md` for testing guide
+5. See `docs/TILE_TYPES.md` for complete tile documentation
+6. Open an issue on GitHub
 
 ## Credits
 
