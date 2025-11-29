@@ -1,0 +1,27 @@
+{
+  "name": "sapui5-analytics-dashboard",
+  "version": "0.1.0",
+  "description": "Analytics Dashboard with SAP Fiori Tiles",
+  "type": "module",
+  "scripts": {
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest --coverage",
+    "test:run": "vitest run"
+  },
+  "devDependencies": {
+    "@vitest/ui": "^1.0.0",
+    "@vitest/coverage-v8": "^1.0.0",
+    "vitest": "^1.0.0",
+    "jsdom": "^23.0.0"
+  },
+  "keywords": [
+    "sapui5",
+    "fiori",
+    "analytics",
+    "dashboard",
+    "excel"
+  ],
+  "author": "",
+  "license": "MIT"
+}

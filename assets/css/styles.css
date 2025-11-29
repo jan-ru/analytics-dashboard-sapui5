@@ -1,0 +1,345 @@
+/* CSS Variables (SAP Fiori Theme) */
+:root {
+  --sap-blue: #0854a0;
+  --sap-green: #107e3e;
+  --sap-orange: #e26800;
+  --sap-red: #bb0000;
+  --sap-grey: #6a6d70;
+  --sap-purple: #91007b;
+  --sap-light-blue: #008fd3;
+  --sap-yellow: #e0aa00;
+
+  --sap-spacing: 1rem;
+  --sap-spacing-small: 0.5rem;
+  --sap-spacing-large: 2rem;
+  --sap-border-radius: 0.25rem;
+
+  --sap-font-family: "72", Arial, Helvetica, sans-serif;
+  --sap-background: #f5f5f5;
+  --sap-text: #32363a;
+  --sap-border: #d9d9d9;
+}
+
+/* Global Styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--sap-font-family);
+  background-color: var(--sap-background);
+  color: var(--sap-text);
+  font-size: 0.875rem;
+}
+
+#app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* App Container */
+.app-container {
+  display: flex;
+  flex: 1;
+  height: calc(100vh - 44px);
+  overflow: hidden;
+}
+
+/* Side Navigation */
+ui5-side-navigation {
+  flex-shrink: 0;
+  border-right: 1px solid var(--sap-border);
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--sap-spacing);
+  background-color: var(--sap-background);
+}
+
+/* View Container */
+.view-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--sap-spacing);
+}
+
+/* Dashboard Header */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--sap-spacing);
+  flex-wrap: wrap;
+  gap: var(--sap-spacing);
+}
+
+/* KPI Grid */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--sap-spacing);
+  margin: var(--sap-spacing-large) 0;
+}
+
+.kpi-card {
+  min-height: 120px;
+}
+
+.kpi-value {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--sap-blue);
+  text-align: center;
+  padding: var(--sap-spacing);
+  line-height: 1.2;
+}
+
+/* Chart Grid */
+.chart-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: var(--sap-spacing-large);
+  margin: var(--sap-spacing-large) 0;
+}
+
+.chart-card {
+  min-height: 400px;
+}
+
+.chart-container {
+  height: 350px;
+  padding: var(--sap-spacing);
+  position: relative;
+}
+
+.chart-container canvas {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+/* Upload View */
+.upload-card {
+  margin: var(--sap-spacing-large) 0;
+  max-width: 600px;
+}
+
+.upload-content {
+  padding: var(--sap-spacing-large);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sap-spacing);
+}
+
+.file-info {
+  padding: var(--sap-spacing);
+  background: #f0f0f0;
+  border-radius: var(--sap-border-radius);
+  min-height: 60px;
+  font-size: 0.875rem;
+}
+
+.file-info ui5-label {
+  display: block;
+  margin-bottom: var(--sap-spacing-small);
+}
+
+/* Message Strip Spacing */
+ui5-message-strip {
+  margin: var(--sap-spacing) 0;
+  display: block;
+}
+
+/* Table View */
+.table-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: var(--sap-spacing) 0;
+  gap: var(--sap-spacing);
+  flex-wrap: wrap;
+}
+
+.table-toolbar-left {
+  flex: 1;
+  min-width: 200px;
+}
+
+.table-toolbar-right {
+  display: flex;
+  gap: var(--sap-spacing-small);
+}
+
+/* Data Table Styles */
+ui5-table {
+  margin: var(--sap-spacing) 0;
+  width: 100%;
+}
+
+/* About View */
+.about-content {
+  max-width: 800px;
+}
+
+.feature-list {
+  margin: var(--sap-spacing) 0;
+  padding-left: var(--sap-spacing-large);
+}
+
+.feature-list li {
+  margin: var(--sap-spacing-small) 0;
+  line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+  }
+
+  ui5-side-navigation {
+    border-right: none;
+    border-bottom: 1px solid var(--sap-border);
+  }
+
+  .kpi-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .chart-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-card {
+    min-height: 300px;
+  }
+
+  .chart-container {
+    height: 250px;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .table-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .table-toolbar-left,
+  .table-toolbar-right {
+    width: 100%;
+  }
+
+  .table-toolbar-right {
+    justify-content: flex-start;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .kpi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .chart-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+}
+
+/* Loading States */
+ui5-busy-indicator[active] {
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Empty States */
+.empty-state {
+  text-align: center;
+  padding: var(--sap-spacing-large);
+  color: var(--sap-grey);
+}
+
+.empty-state ui5-icon {
+  font-size: 4rem;
+  margin-bottom: var(--sap-spacing);
+  color: var(--sap-grey);
+}
+
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.mt-1 {
+  margin-top: var(--sap-spacing);
+}
+
+.mt-2 {
+  margin-top: var(--sap-spacing-large);
+}
+
+.mb-1 {
+  margin-bottom: var(--sap-spacing);
+}
+
+.mb-2 {
+  margin-bottom: var(--sap-spacing-large);
+}
+
+.gap-1 {
+  gap: var(--sap-spacing);
+}
+
+/* Button Groups */
+.button-group {
+  display: flex;
+  gap: var(--sap-spacing-small);
+  align-items: center;
+}
+
+/* Card Content Spacing */
+ui5-card [slot="content"] {
+  padding: var(--sap-spacing);
+}
+
+/* Smooth Transitions */
+.main-content {
+  transition: opacity 0.2s ease-in-out;
+}
+
+/* Focus Styles for Accessibility */
+*:focus-visible {
+  outline: 2px solid var(--sap-blue);
+  outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+  ui5-shellbar,
+  ui5-side-navigation,
+  .table-toolbar,
+  ui5-button {
+    display: none;
+  }
+
+  .app-container {
+    display: block;
+  }
+
+  .main-content {
+    overflow: visible;
+  }
+
+  ui5-card {
+    page-break-inside: avoid;
+  }
+}

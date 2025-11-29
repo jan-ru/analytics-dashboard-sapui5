@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analytics Dashboard - SAPUI5 Web Components</title>
+
+  <!-- External Libraries (loaded as globals) -->
+  <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="https://unpkg.com/navigo@8.11.1/lib/navigo.min.js"></script>
+
+  <!-- Application Styles -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- UI5 Web Components - Load individual components directly -->
+  <script type="module">
+    // Set base path for UI5 assets
+    window.UI5_BASE_PATH = 'https://cdn.jsdelivr.net/npm/@ui5/webcomponents@1.24.0/dist/';
+  </script>
+</head>
+<body>
+  <div id="app">
+    <!-- Shell Bar (Top Navigation) -->
+    <ui5-shellbar
+      primary-title="Analytics Dashboard"
+      show-notifications
+      show-product-switch>
+    </ui5-shellbar>
+
+    <!-- Main Container (Flex Layout) -->
+    <div class="app-container">
+      <!-- Side Navigation -->
+      <ui5-side-navigation collapsed="false">
+        <ui5-side-navigation-item
+          text="Upload"
+          icon="upload"
+          data-route="/upload"
+          selected>
+        </ui5-side-navigation-item>
+        <ui5-side-navigation-item
+          text="Dashboard"
+          icon="bar-chart"
+          data-route="/dashboard">
+        </ui5-side-navigation-item>
+        <ui5-side-navigation-item
+          text="Data Table"
+          icon="table-view"
+          data-route="/data">
+        </ui5-side-navigation-item>
+        <ui5-side-navigation-item
+          text="About"
+          icon="information"
+          data-route="/about">
+        </ui5-side-navigation-item>
+      </ui5-side-navigation>
+
+      <!-- Content Area (Dynamic Views) -->
+      <main id="content" class="main-content">
+        <!-- Views will be dynamically inserted here -->
+        <div class="view-container">
+          <ui5-title level="H2">Loading...</ui5-title>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Application Bootstrap (ES Module) -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
