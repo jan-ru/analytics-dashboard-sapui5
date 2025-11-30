@@ -6,7 +6,6 @@ import { showUploadViewSimple } from './views/upload-view-simple.js';
 import { showDashboardViewSimple } from './views/dashboard-view-simple.js';
 import { showDataViewSimple } from './views/data-view-simple.js';
 import { showAboutViewSimple } from './views/about-view-simple.js';
-import { showGraphsViewSimple } from './views/graphs-view-simple.js';
 import { showTilesViewSimple } from './views/tiles-view-simple.js';
 import { showChartTypesViewSimple } from './views/chart-types-view-simple.js';
 import { showSapIconsViewSimple } from './views/sap-icons-view-simple.js';
@@ -40,7 +39,6 @@ export function initRouter() {
     [ROUTES.HOME]: () => showUploadViewSimple(),
     [ROUTES.UPLOAD]: () => showUploadViewSimple(),
     [ROUTES.DASHBOARD]: requireData(showDashboardViewSimple),
-    [ROUTES.GRAPHS]: requireData(showGraphsViewSimple),
     [ROUTES.CHART_TYPES]: requireData(showChartTypesViewSimple),
     [ROUTES.TILES]: requireData(showTilesViewSimple),
     [ROUTES.SAP_ICONS]: () => showSapIconsViewSimple(),

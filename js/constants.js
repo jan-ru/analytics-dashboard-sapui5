@@ -11,7 +11,6 @@ export const ROUTES = {
   HOME: '/',
   UPLOAD: '/upload',
   DASHBOARD: '/dashboard',
-  GRAPHS: '/graphs',
   CHART_TYPES: '/chart-types',
   TILES: '/tiles',
   SAP_ICONS: '/sap-icons',

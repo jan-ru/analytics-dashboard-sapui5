@@ -269,13 +269,23 @@ This is a demonstration project. Feel free to:
 - Submit pull requests
 - Report issues
 
+## Design Principles
+
+This application follows a hybrid UI framework approach:
+
+- **UI5 Web Components**: Used for shell, tiles, cards, and forms
+- **Classic OpenUI5**: Used exclusively for tables
+- **Chart.js**: Used for all data visualizations
+- **Pure CSS**: Custom styling for layouts and components
+
+This approach leverages the strengths of each library while maintaining simplicity and performance.
+
 ## Future Enhancements
 
 Potential features for future versions:
 
 - **Data Persistence**: Save recent files in localStorage
 - **Advanced Filtering**: Multi-column filters, date ranges
-- **More Chart Types**: Scatter plots, radar charts, heatmaps
 - **Chart Export**: Download charts as PNG images
 - **Dark Mode**: Theme toggle
 - **Multi-File Support**: Compare multiple datasets
@@ -302,7 +312,7 @@ Built with:
 
 - [SAP UI5 Web Components](https://sap.github.io/ui5-webcomponents/)
 - [Chart.js](https://www.chartjs.org/)
-- [SheetJS](https://sheetjs.com/)
+- [ExcelJS](https://github.com/exceljs/exceljs)
 - [Navigo](https://github.com/krasimir/navigo)
 
 ---

@@ -138,9 +138,9 @@ export function showTilesViewSimple() {
       </div>
 
       <!-- Type 10: Launch Tile - App launcher -->
-      <div class="sap-tile launch tile-orange" data-action="graphs">
+      <div class="sap-tile launch tile-orange" data-action="chart-types">
         <div class="launch-icon sap-icon">&#xe0c1;</div>
-        <div class="launch-title">Charts</div>
+        <div class="launch-title">Chart Types</div>
         <div class="launch-description">Visualize your data with interactive charts</div>
       </div>
 
@@ -153,9 +153,9 @@ export function showTilesViewSimple() {
             <span class="link-list-item-text">View Data Table</span>
             <span class="link-list-item-arrow">→</span>
           </div>
-          <div class="link-list-item" data-action="graphs">
+          <div class="link-list-item" data-action="chart-types">
             <span class="link-list-item-icon sap-icon">&#xe0c1;</span>
-            <span class="link-list-item-text">View Charts</span>
+            <span class="link-list-item-text">View Chart Types</span>
             <span class="link-list-item-arrow">→</span>
           </div>
           <div class="link-list-item" data-action="dashboard">
@@ -344,8 +344,8 @@ function attachHandlers() {
         window.location.hash = '/data';
       } else if (action === 'upload') {
         window.location.hash = '/upload';
-      } else if (action === 'graphs') {
-        window.location.hash = '/graphs';
+      } else if (action === 'chart-types') {
+        window.location.hash = '/chart-types';
       } else if (action === 'dashboard') {
         window.location.hash = '/dashboard';
       } else if (action === 'metric') {
@@ -364,8 +364,8 @@ function attachHandlers() {
 
       if (action === 'data-table') {
         window.location.hash = '/data';
-      } else if (action === 'graphs') {
-        window.location.hash = '/graphs';
+      } else if (action === 'chart-types') {
+        window.location.hash = '/chart-types';
       } else if (action === 'dashboard') {
         window.location.hash = '/dashboard';
       }
