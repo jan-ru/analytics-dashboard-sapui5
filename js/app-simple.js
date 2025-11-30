@@ -6,7 +6,7 @@ import { initRouter } from './router-simple.js';
 import { initAppState } from './utils/data-processor.js';
 
 /**
- * Load UI5 Web Components dynamically
+ * Load UI5 Web Components dynamically using script tags
  */
 async function loadUI5Components() {
   const BASE = 'https://cdn.jsdelivr.net/npm/@ui5/webcomponents@2.16.2/dist/';
@@ -20,11 +20,24 @@ async function loadUI5Components() {
   ];
 
   try {
-    await Promise.all(components.map(url => import(url)));
+    // Load components by creating script tags
+    const promises = components.map(url => {
+      return new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.type = 'module';
+        script.src = url;
+        script.onload = () => resolve();
+        script.onerror = () => reject(new Error(`Failed to load ${url}`));
+        document.head.appendChild(script);
+      });
+    });
+
+    await Promise.all(promises);
     console.log('✅ UI5 Web Components loaded successfully');
     return true;
   } catch (error) {
     console.error('❌ Failed to load UI5 Web Components:', error);
+    console.warn('⚠️ Continuing without UI5 Web Components...');
     return false;
   }
 }
