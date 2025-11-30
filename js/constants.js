@@ -13,6 +13,7 @@ export const ROUTES = {
   DASHBOARD: '/dashboard',
   CHART_TYPES: '/chart-types',
   TILES: '/tiles',
+  UI5_COMPONENTS: '/ui5-components',
   SAP_ICONS: '/sap-icons',
   SAP_COLORS: '/sap-colors',
   DATA: '/data',

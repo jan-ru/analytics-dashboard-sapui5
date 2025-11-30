@@ -8,7 +8,18 @@
   <!-- External Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/exceljs@4.4.0/dist/exceljs.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-  <script src="https://unpkg.com/navigo@8.11.1/lib/navigo.min.js"></script>
+
+  <!-- OpenUI5 Core for Routing -->
+  <script
+    id="sap-ui-bootstrap"
+    src="https://sdk.openui5.org/resources/sap-ui-core.js"
+    data-sap-ui-theme="sap_horizon"
+    data-sap-ui-libs="sap.ui.core"
+    data-sap-ui-compatVersion="edge"
+    data-sap-ui-async="true"
+    data-sap-ui-preload="async"
+    data-sap-ui-xx-waitForTheme="true">
+  </script>
 
   <!-- Styles -->
   <style>
@@ -1436,6 +1447,75 @@
     .copy-palette-btn:hover {
       background: #064080;
     }
+
+    /* UI5 Components Showcase Styles */
+    .demo-card {
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .demo-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    }
+
+    .ui5-card-header {
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .analytical-card-wrapper {
+      background: white;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .analytical-card {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .analytical-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .analytical-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .analytical-subtitle {
+      font-size: 0.875rem;
+      color: #666;
+      margin-top: 0.25rem;
+    }
+
+    .analytical-value {
+      padding: 0.5rem 0;
+    }
+
+    .analytical-chart {
+      margin-top: 0.5rem;
+    }
+
+    /* UI5 Input Customization */
+    ui5-input {
+      --sapField_BorderColor: #89919a;
+      --sapField_Hover_BorderColor: #0854a0;
+      --sapField_Focus_BorderColor: #0854a0;
+    }
+
+    /* UI5 ShellBar Customization */
+    ui5-shellbar {
+      --sapShellBar_Background: #0854a0;
+      --sapShellBar_TextColor: #ffffff;
+    }
   </style>
 </head>
 <body>
@@ -1452,6 +1532,7 @@
       <div class="nav-item" data-route="/dashboard">📈 Dashboard</div>
       <div class="nav-item" data-route="/chart-types">📉 Chart Types</div>
       <div class="nav-item" data-route="/tiles">🎨 SAP Tiles</div>
+      <div class="nav-item" data-route="/ui5-components">🎯 UI5 Components</div>
       <div class="nav-item" data-route="/sap-icons">✨ SAP Icons</div>
       <div class="nav-item" data-route="/sap-colors">🎨 SAP Colors</div>
       <div class="nav-item" data-route="/data">📋 Data Table</div>

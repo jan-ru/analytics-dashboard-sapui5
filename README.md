@@ -8,6 +8,7 @@ A modern, lightweight analytics dashboard application built with SAPUI5 Web Comp
 - **Interactive Dashboard**: View your data through KPI cards and dynamic charts
 - **6 Chart Types Showcase**: Line, Bar, Radar, Doughnut, Polar Area, and Bubble charts
 - **15 SAP Fiori Tiles**: Complete tile showcase including Progress, Notification, Timeline, and Status tiles
+- **UI5 Components Showcase**: Interactive demos of Card, Input, AnalyticalCard, and ShellBar
 - **100+ SAP Icons**: Browse and copy SAP UI5 icon codes with interactive showcase
 - **SAP Color Schemes**: Explore SAP Fiori color palettes with accessibility guidelines
 - **Data Table**: Sort and filter your data in an interactive table
@@ -19,12 +20,13 @@ A modern, lightweight analytics dashboard application built with SAPUI5 Web Comp
 ## Technology Stack
 
 - **UI Framework**: [UI5 Web Components v2.16.2](https://sap.github.io/ui5-webcomponents/)
+- **UI Components**: Card, Input, AnalyticalCard, ShellBar
+- **Routing**: [OpenUI5 HashChanger](https://sdk.openui5.org/) for routing
 - **Charts**: [Chart.js v4.4.0](https://www.chartjs.org/)
 - **Excel Processing**: [ExcelJS v4.4.0](https://github.com/exceljs/exceljs)
-- **Routing**: [Navigo v8.11.1](https://github.com/krasimir/navigo)
 - **Testing**: [Deno Test](https://deno.land/)
-- **Module System**: ES Modules with Import Maps
-- **No Build Tools**: Pure HTML/CSS/JavaScript
+- **Module System**: ES Modules
+- **No Build Tools**: Pure HTML/CSS/JavaScript with CDN
 
 ## Quick Start
 
@@ -311,9 +313,9 @@ For questions or issues:
 Built with:
 
 - [SAP UI5 Web Components](https://sap.github.io/ui5-webcomponents/)
+- [OpenUI5](https://sdk.openui5.org/)
 - [Chart.js](https://www.chartjs.org/)
 - [ExcelJS](https://github.com/exceljs/exceljs)
-- [Navigo](https://github.com/krasimir/navigo)
 
 ---
 
