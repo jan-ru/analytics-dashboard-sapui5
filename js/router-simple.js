@@ -55,14 +55,21 @@ function handleHashChange(hash) {
   const cleanHash = hash.replace(/^#\/?/, '');
   const route = cleanHash ? `/${cleanHash}` : '/';
 
-  console.log('Route changed:', route);
+  console.log('📍 Route changed:', route);
 
   // Find and execute the route handler
   const handler = routeConfig[route];
   if (handler) {
-    handler();
+    try {
+      console.log('🎯 Executing route handler for:', route);
+      handler();
+      console.log('✅ Route handler completed for:', route);
+    } catch (error) {
+      console.error('❌ Route handler error:', error);
+      showError('Failed to load page: ' + error.message);
+    }
   } else {
-    console.warn('Unknown route:', route);
+    console.warn('❓ Unknown route:', route);
     showError('Page not found');
     navigateTo(ROUTES.HOME);
   }
