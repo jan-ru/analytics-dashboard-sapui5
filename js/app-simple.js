@@ -31,23 +31,38 @@ async function initApp() {
 }
 
 /**
- * Wait for OpenUI5 core to be ready
+ * Wait for OpenUI5 core to be ready (with timeout)
  */
 function waitForOpenUI5() {
   return new Promise((resolve) => {
+    let resolved = false;
+
+    // Set a timeout to prevent infinite waiting
+    const timeout = setTimeout(() => {
+      if (!resolved) {
+        resolved = true;
+        console.warn('⚠️ OpenUI5 Core timeout - continuing anyway');
+        resolve();
+      }
+    }, 3000); // 3 second timeout
+
     if (window.sap && window.sap.ui) {
       sap.ui.getCore().attachInit(function() {
-        console.log('✅ OpenUI5 Core ready');
-        resolve();
+        if (!resolved) {
+          resolved = true;
+          clearTimeout(timeout);
+          console.log('✅ OpenUI5 Core ready');
+          resolve();
+        }
       });
     } else {
-      // Fallback: wait for window load
-      window.addEventListener('load', () => {
-        setTimeout(() => {
-          console.log('✅ OpenUI5 Core ready (fallback)');
-          resolve();
-        }, 100);
-      });
+      // Immediate fallback if sap.ui not available
+      if (!resolved) {
+        resolved = true;
+        clearTimeout(timeout);
+        console.log('✅ OpenUI5 not found - continuing without it');
+        resolve();
+      }
     }
   });
 }

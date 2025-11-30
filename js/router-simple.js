@@ -69,33 +69,76 @@ function handleHashChange(hash) {
 }
 
 /**
- * Initialize the router using OpenUI5 HashChanger
+ * Initialize the router using OpenUI5 HashChanger (with fallback)
  */
 export function initRouter() {
   console.log('🔀 Initializing OpenUI5 Router...');
 
-  // Wait for OpenUI5 to be ready
-  sap.ui.require(['sap/ui/core/routing/HashChanger'], function(HashChanger) {
-    // Get the HashChanger instance
-    hashChanger = HashChanger.getInstance();
+  // Check if OpenUI5 is available
+  if (!window.sap || !window.sap.ui) {
+    console.warn('⚠️ OpenUI5 not available - using fallback router');
+    initFallbackRouter();
+    return;
+  }
 
-    // Set up event listener for hash changes
-    hashChanger.attachEvent('hashChanged', function(oEvent) {
-      const newHash = oEvent.getParameter('newHash');
-      handleHashChange(newHash);
+  // Try to use OpenUI5 HashChanger with timeout
+  const timeout = setTimeout(() => {
+    console.warn('⚠️ OpenUI5 Router timeout - using fallback');
+    initFallbackRouter();
+  }, 2000);
+
+  try {
+    sap.ui.require(['sap/ui/core/routing/HashChanger'], function(HashChanger) {
+      clearTimeout(timeout);
+
+      // Get the HashChanger instance
+      hashChanger = HashChanger.getInstance();
+
+      // Set up event listener for hash changes
+      hashChanger.attachEvent('hashChanged', function(oEvent) {
+        const newHash = oEvent.getParameter('newHash');
+        handleHashChange(newHash);
+      });
+
+      // Initialize with current hash
+      const currentHash = hashChanger.getHash();
+      if (!currentHash) {
+        // No hash, navigate to home
+        hashChanger.setHash('upload');
+      } else {
+        handleHashChange(currentHash);
+      }
+
+      console.log('✅ OpenUI5 Router initialized');
     });
+  } catch (error) {
+    clearTimeout(timeout);
+    console.error('❌ OpenUI5 Router error:', error);
+    initFallbackRouter();
+  }
+}
 
-    // Initialize with current hash
-    const currentHash = hashChanger.getHash();
-    if (!currentHash) {
-      // No hash, navigate to home
-      hashChanger.setHash('upload');
-    } else {
-      handleHashChange(currentHash);
-    }
+/**
+ * Fallback router using plain window.location.hash
+ */
+function initFallbackRouter() {
+  console.log('🔀 Using fallback hash router...');
 
-    console.log('✅ OpenUI5 Router initialized');
+  // Listen to hash changes
+  window.addEventListener('hashchange', () => {
+    const hash = window.location.hash.substring(1); // Remove #
+    handleHashChange(hash);
   });
+
+  // Initialize with current hash
+  const currentHash = window.location.hash.substring(1);
+  if (!currentHash) {
+    window.location.hash = '#upload';
+  } else {
+    handleHashChange(currentHash);
+  }
+
+  console.log('✅ Fallback Router initialized');
 }
 
 /**
