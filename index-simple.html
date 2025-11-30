@@ -39,6 +39,11 @@
   </script>
 
   <!-- UI5 Web Components -->
+  <script type="module">
+    // Set theme before loading components
+    import { setTheme } from "https://cdn.jsdelivr.net/npm/@ui5/webcomponents-base@2.0.0/dist/config/Theme.js";
+    setTheme("sap_horizon");
+  </script>
   <script type="module" src="https://cdn.jsdelivr.net/npm/@ui5/webcomponents@2.0.0/dist/Assets.js"></script>
   <script type="module" src="https://cdn.jsdelivr.net/npm/@ui5/webcomponents@2.0.0/dist/Card.js"></script>
   <script type="module" src="https://cdn.jsdelivr.net/npm/@ui5/webcomponents@2.0.0/dist/Input.js"></script>
