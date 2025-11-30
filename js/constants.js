@@ -14,6 +14,8 @@ export const ROUTES = {
   GRAPHS: '/graphs',
   CHART_TYPES: '/chart-types',
   TILES: '/tiles',
+  SAP_ICONS: '/sap-icons',
+  SAP_COLORS: '/sap-colors',
   DATA: '/data',
   ABOUT: '/about'
 };

@@ -1182,6 +1182,260 @@
       font-size: 0.7rem;
       color: #666;
     }
+
+    /* Status/Compliance Tile - Controls verification */
+    .sap-tile.status {
+      min-height: 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .status-tile-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .status-tile-title {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .status-tile-icon {
+      font-size: 2rem;
+      opacity: 0.2;
+    }
+
+    .status-checks {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin: 0.75rem 0;
+    }
+
+    .status-check-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.5rem;
+      background: #f5f5f5;
+      border-radius: 4px;
+      transition: all 0.2s;
+    }
+
+    .status-check-item:hover {
+      background: #e8f5e9;
+    }
+
+    .status-check-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.875rem;
+      flex-shrink: 0;
+    }
+
+    .status-check-icon.passed {
+      background: #107e3e;
+      color: white;
+    }
+
+    .status-check-icon.warning {
+      background: #e26800;
+      color: white;
+    }
+
+    .status-check-icon.failed {
+      background: #bb0000;
+      color: white;
+    }
+
+    .status-check-text {
+      font-size: 0.8rem;
+      color: #333;
+      flex: 1;
+    }
+
+    .status-summary {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 1rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    .status-summary-item {
+      text-align: center;
+    }
+
+    .status-summary-value {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #107e3e;
+    }
+
+    .status-summary-label {
+      font-size: 0.65rem;
+      color: #666;
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+
+    /* SAP Icons Showcase Styles */
+    .icon-showcase-item {
+      background: white;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      min-height: 150px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .icon-showcase-item:hover {
+      background: #f5f5f5;
+      border-color: #0854a0;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .icon-showcase-icon {
+      font-size: 2.5rem;
+      color: #0854a0;
+      margin-bottom: 0.5rem;
+    }
+
+    .icon-showcase-name {
+      font-size: 0.75rem;
+      color: #333;
+      font-weight: 500;
+      word-break: break-word;
+    }
+
+    .icon-showcase-code {
+      font-size: 0.7rem;
+      color: #666;
+      font-family: 'Courier New', monospace;
+      background: #f5f5f5;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+    }
+
+    .icon-showcase-hex {
+      font-size: 0.65rem;
+      color: #999;
+      font-family: 'Courier New', monospace;
+    }
+
+    /* SAP Color Schemes Styles */
+    .color-scheme-section {
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .color-scheme-section:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .color-swatch-item {
+      background: white;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .color-swatch-item:hover {
+      border-color: #0854a0;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .color-swatch-preview {
+      height: 80px;
+      width: 100%;
+    }
+
+    .color-swatch-info {
+      padding: 0.75rem;
+    }
+
+    .color-swatch-name {
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 0.25rem;
+    }
+
+    .color-swatch-hex {
+      font-family: 'Courier New', monospace;
+      color: #666;
+      font-size: 0.875rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .color-swatch-usage {
+      font-size: 0.75rem;
+      color: #999;
+    }
+
+    .chart-palette-section {
+      background: #fafafa;
+      padding: 1rem;
+      border-radius: 8px;
+      border: 1px solid #e0e0e0;
+    }
+
+    .chart-palette-colors {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .chart-palette-color {
+      width: 60px;
+      height: 60px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+      border: 2px solid white;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .chart-palette-color:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .copy-palette-btn {
+      background: #0854a0;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.875rem;
+      transition: background 0.2s ease;
+    }
+
+    .copy-palette-btn:hover {
+      background: #064080;
+    }
   </style>
 </head>
 <body>
@@ -1199,6 +1453,8 @@
       <div class="nav-item" data-route="/graphs">📊 Graphs</div>
       <div class="nav-item" data-route="/chart-types">📉 Chart Types</div>
       <div class="nav-item" data-route="/tiles">🎨 Tiles</div>
+      <div class="nav-item" data-route="/sap-icons">✨ SAP Icons</div>
+      <div class="nav-item" data-route="/sap-colors">🎨 SAP Colors</div>
       <div class="nav-item" data-route="/data">📋 Data Table</div>
       <div class="nav-item" data-route="/about">ℹ️ About</div>
     </div>

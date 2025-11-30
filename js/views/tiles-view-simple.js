@@ -71,8 +71,8 @@ export function showTilesViewSimple() {
         </div>
       </div>
 
-      <!-- Type 3: Generic Tiles -->
-      ${renderGenericTiles(metrics)}
+      <!-- Type 3: Generic Tile -->
+      ${renderGenericTiles(metrics, 1)}
 
       <!-- Type 4: Slide Tile - Rotating Metrics -->
       <div class="sap-tile slide tile-blue" id="slideTile">
@@ -228,10 +228,40 @@ export function showTilesViewSimple() {
           </div>
         </div>
       </div>
+
+      <!-- Type 15: Status/Compliance Tile - Controls verification -->
+      <div class="sap-tile status tile-green">
+        <div>
+          <div class="status-tile-header">
+            <div class="status-tile-title">Data Controls Status</div>
+            <div class="status-tile-icon">✓</div>
+          </div>
+          <div class="status-checks">
+            <div class="status-check-item">
+              <div class="status-check-icon passed">✓</div>
+              <div class="status-check-text">Data validation passed</div>
+            </div>
+            <div class="status-check-item">
+              <div class="status-check-icon passed">✓</div>
+              <div class="status-check-text">Format compliance verified</div>
+            </div>
+            <div class="status-check-item">
+              <div class="status-check-icon passed">✓</div>
+              <div class="status-check-text">Quality checks complete</div>
+            </div>
+          </div>
+        </div>
+        <div class="status-summary">
+          <div class="status-summary-item">
+            <div class="status-summary-value">3/3</div>
+            <div class="status-summary-label">Controls Met</div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="card" style="margin-top: 2rem;">
-      <div class="card-header">Tile Types Reference (14 Types)</div>
+      <div class="card-header">Tile Types Reference (15 Types)</div>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1rem;">
         <div>
           <strong>1. Analytical Tile</strong>
@@ -288,6 +318,10 @@ export function showTilesViewSimple() {
         <div>
           <strong>14. Timeline Tile</strong>
           <p style="margin: 0.5rem 0 0 0; color: #666; font-size: 0.9rem;">Activity timeline with colored status dots</p>
+        </div>
+        <div>
+          <strong>15. Status/Compliance Tile</strong>
+          <p style="margin: 0.5rem 0 0 0; color: #666; font-size: 0.9rem;">Control verification with pass/fail indicators</p>
         </div>
       </div>
     </div>

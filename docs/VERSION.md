@@ -1,5 +1,54 @@
 # Version History
 
+## v0.5.0 - SAP Icons & Color Schemes + Status Tile (2025-11-30)
+
+### 🎉 New Features
+
+#### New Pages
+- **SAP Icons Showcase**: Display 100+ SAP UI5 icons with codes
+  - Click to copy HTML entity codes
+  - Unicode hex values shown
+  - Organized by icon name
+  - Usage examples (HTML, CSS, JavaScript)
+  - Categorized by type (Charts, Documents, Actions, People, Commerce, Time, Communication, Logistics)
+
+- **SAP Color Schemes**: Complete SAP Fiori color palette guide
+  - 6 color scheme categories with usage guidelines
+  - 4 ready-to-use Chart.js palettes
+  - Accessibility & WCAG compliance table
+  - Click to copy hex codes
+  - Copy palette arrays for Chart.js
+  - Color usage best practices
+  - Code examples for JavaScript and CSS
+
+#### New Tile Type
+- **Status/Compliance Tile (Type 15)**: Controls verification display
+  - Shows pass/fail status for multiple checks
+  - Visual checkmarks for passed controls
+  - Summary count (e.g., "3/3 Controls Met")
+  - Green theme for success states
+
+### 🐛 Bug Fixes
+- Fixed duplicate Generic Tile (now shows only 1 instead of 2)
+
+### 🔧 Technical Implementation
+- New files:
+  - `js/views/sap-icons-view-simple.js` (300+ lines)
+  - `js/views/sap-colors-view-simple.js` (400+ lines)
+- Added CSS for icon and color showcase components
+- Added routes: `/sap-icons`, `/sap-colors`
+- Updated navigation menu with 2 new items
+- Total navigation pages: 7 → 9
+
+### 📊 Statistics
+- Total tile types: 14 → 15
+- Total navigation pages: 7 → 9
+- SAP icons displayed: 100+
+- Color palettes: 4 chart palettes + 6 semantic schemes
+- Lines of code added: ~700
+
+---
+
 ## v0.4.0 - Added Chart Types Showcase Page (2025-11-30)
 
 ### 🎉 New Features

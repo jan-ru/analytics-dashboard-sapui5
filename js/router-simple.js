@@ -9,6 +9,8 @@ import { showAboutViewSimple } from './views/about-view-simple.js';
 import { showGraphsViewSimple } from './views/graphs-view-simple.js';
 import { showTilesViewSimple } from './views/tiles-view-simple.js';
 import { showChartTypesViewSimple } from './views/chart-types-view-simple.js';
+import { showSapIconsViewSimple } from './views/sap-icons-view-simple.js';
+import { showSapColorsViewSimple } from './views/sap-colors-view-simple.js';
 import { ROUTES, MESSAGES } from './constants.js';
 import { showError } from './utils/toast.js';
 
@@ -41,6 +43,8 @@ export function initRouter() {
     [ROUTES.GRAPHS]: requireData(showGraphsViewSimple),
     [ROUTES.CHART_TYPES]: requireData(showChartTypesViewSimple),
     [ROUTES.TILES]: requireData(showTilesViewSimple),
+    [ROUTES.SAP_ICONS]: () => showSapIconsViewSimple(),
+    [ROUTES.SAP_COLORS]: () => showSapColorsViewSimple(),
     [ROUTES.DATA]: requireData(showDataViewSimple),
     [ROUTES.ABOUT]: () => showAboutViewSimple()
   });
