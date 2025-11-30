@@ -39,6 +39,15 @@
   </script>
 
   <!-- UI5 Web Components -->
+  <script type="module">
+    // Configure theme root to prevent 404 errors
+    import { setThemeRoot } from "@ui5/webcomponents-base/dist/config/ThemeRoot.js";
+    import { setTheme } from "@ui5/webcomponents-base/dist/config/Theme.js";
+
+    // Use base theme without external CSS files
+    setTheme("sap_fiori_3");
+    setThemeRoot("https://cdn.jsdelivr.net/npm/@ui5/webcomponents-theming@1.24.0/dist/");
+  </script>
   <script type="module" src="https://cdn.jsdelivr.net/npm/@ui5/webcomponents@1.24.0/dist/Assets.js"></script>
   <script type="module" src="https://cdn.jsdelivr.net/npm/@ui5/webcomponents@1.24.0/dist/Card.js"></script>
   <script type="module" src="https://cdn.jsdelivr.net/npm/@ui5/webcomponents@1.24.0/dist/Input.js"></script>
