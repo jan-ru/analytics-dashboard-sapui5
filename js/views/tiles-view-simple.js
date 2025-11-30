@@ -126,10 +126,62 @@ export function showTilesViewSimple() {
         <div class="action-label">Upload New File</div>
         <div class="action-description">Click to upload another Excel file</div>
       </div>
+
+      <!-- Type 9: KPI Tile - Large number with status -->
+      <div class="sap-tile kpi tile-green">
+        <div class="kpi-tile-header">
+          <div class="kpi-tile-title">Data Quality</div>
+          <div class="kpi-tile-icon sap-icon">&#xe1e2;</div>
+        </div>
+        <div>
+          <span class="kpi-tile-value">98</span>
+          <span class="kpi-tile-unit">%</span>
+        </div>
+        <div class="kpi-tile-status status-good">
+          <span>✓</span>
+          <span>Excellent</span>
+        </div>
+        <div class="kpi-tile-footer">
+          <span class="sap-icon" style="font-size: 0.9rem;">&#xe1db;</span>
+          <span>Last validated ${new Date().toLocaleDateString()}</span>
+        </div>
+      </div>
+
+      <!-- Type 10: Launch Tile - App launcher -->
+      <div class="sap-tile launch tile-orange" data-action="graphs">
+        <div class="launch-icon sap-icon">&#xe0c1;</div>
+        <div class="launch-title">Charts</div>
+        <div class="launch-description">Visualize your data with interactive charts</div>
+      </div>
+
+      <!-- Type 11: Link List Tile - Multiple links -->
+      <div class="sap-tile link-list">
+        <div class="link-list-header">Quick Actions</div>
+        <div class="link-list-items">
+          <div class="link-list-item" data-action="data-table">
+            <span class="link-list-item-icon sap-icon">&#xe1b3;</span>
+            <span class="link-list-item-text">View Data Table</span>
+            <span class="link-list-item-arrow">→</span>
+          </div>
+          <div class="link-list-item" data-action="graphs">
+            <span class="link-list-item-icon sap-icon">&#xe0c1;</span>
+            <span class="link-list-item-text">View Charts</span>
+            <span class="link-list-item-arrow">→</span>
+          </div>
+          <div class="link-list-item" data-action="dashboard">
+            <span class="link-list-item-icon sap-icon">&#xe112;</span>
+            <span class="link-list-item-text">Dashboard</span>
+            <span class="link-list-item-arrow">→</span>
+          </div>
+        </div>
+        <div class="link-list-footer">
+          <div class="link-list-more">View all actions</div>
+        </div>
+      </div>
     </div>
 
     <div class="card" style="margin-top: 2rem;">
-      <div class="card-header">Tile Types Reference</div>
+      <div class="card-header">Tile Types Reference (11 Types)</div>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1rem;">
         <div>
           <strong>1. Analytical Tile</strong>
@@ -163,6 +215,18 @@ export function showTilesViewSimple() {
           <strong>8. Action Tile</strong>
           <p style="margin: 0.5rem 0 0 0; color: #666; font-size: 0.9rem;">Interactive button for user actions</p>
         </div>
+        <div>
+          <strong>9. KPI Tile</strong>
+          <p style="margin: 0.5rem 0 0 0; color: #666; font-size: 0.9rem;">Large number with status indicator and SAP icon</p>
+        </div>
+        <div>
+          <strong>10. Launch Tile</strong>
+          <p style="margin: 0.5rem 0 0 0; color: #666; font-size: 0.9rem;">App launcher with SAP icon and description</p>
+        </div>
+        <div>
+          <strong>11. Link List Tile</strong>
+          <p style="margin: 0.5rem 0 0 0; color: #666; font-size: 0.9rem;">Multiple clickable links with SAP icons</p>
+        </div>
       </div>
     </div>
   `;
@@ -184,9 +248,30 @@ function attachHandlers() {
         window.location.hash = '/data';
       } else if (action === 'upload') {
         window.location.hash = '/upload';
+      } else if (action === 'graphs') {
+        window.location.hash = '/graphs';
+      } else if (action === 'dashboard') {
+        window.location.hash = '/dashboard';
       } else if (action === 'metric') {
         const column = tile.getAttribute('data-column');
         showMetricDetails(column, window.appState.metrics);
+      }
+    });
+  });
+
+  // Handle link list items separately
+  const linkItems = document.querySelectorAll('.link-list-item');
+  linkItems.forEach(item => {
+    item.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const action = item.getAttribute('data-action');
+
+      if (action === 'data-table') {
+        window.location.hash = '/data';
+      } else if (action === 'graphs') {
+        window.location.hash = '/graphs';
+      } else if (action === 'dashboard') {
+        window.location.hash = '/dashboard';
       }
     });
   });

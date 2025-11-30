@@ -696,6 +696,251 @@
       align-items: center;
       margin-bottom: 1rem;
     }
+
+    /* SAP UI5 Icon Font */
+    @font-face {
+      font-family: 'SAP-icons';
+      src: url('https://sapui5.hana.ondemand.com/sdk/resources/sap/ui/core/themes/base/fonts/SAP-icons.woff2') format('woff2'),
+           url('https://sapui5.hana.ondemand.com/sdk/resources/sap/ui/core/themes/base/fonts/SAP-icons.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    .sap-icon {
+      font-family: 'SAP-icons';
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* KPI Tile - Large number with status indicator */
+    .sap-tile.kpi {
+      min-height: 180px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .kpi-tile-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+    }
+
+    .kpi-tile-title {
+      font-size: 0.875rem;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .kpi-tile-icon {
+      font-size: 2rem;
+      opacity: 0.2;
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+    }
+
+    .kpi-tile-value {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #0854a0;
+      line-height: 1;
+      margin: 1rem 0;
+    }
+
+    .sap-tile.kpi.tile-green .kpi-tile-value { color: #107e3e; }
+    .sap-tile.kpi.tile-orange .kpi-tile-value { color: #e26800; }
+    .sap-tile.kpi.tile-red .kpi-tile-value { color: #bb0000; }
+    .sap-tile.kpi.tile-purple .kpi-tile-value { color: #91007b; }
+
+    .kpi-tile-unit {
+      font-size: 1.25rem;
+      font-weight: normal;
+      color: #666;
+      margin-left: 0.5rem;
+    }
+
+    .kpi-tile-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-top: 0.5rem;
+    }
+
+    .kpi-tile-status.status-good {
+      background: #e8f5e9;
+      color: #107e3e;
+    }
+
+    .kpi-tile-status.status-warning {
+      background: #fff3e0;
+      color: #e26800;
+    }
+
+    .kpi-tile-status.status-critical {
+      background: #ffebee;
+      color: #bb0000;
+    }
+
+    .kpi-tile-footer {
+      font-size: 0.7rem;
+      color: #999;
+      margin-top: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Launch Tile - App launcher with icon */
+    .sap-tile.launch {
+      min-height: 160px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s;
+      padding: 1.5rem;
+    }
+
+    .sap-tile.launch:hover {
+      background: linear-gradient(135deg, #ffffff 0%, #f5f9ff 100%);
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px rgba(8, 84, 160, 0.15);
+    }
+
+    .launch-icon {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      color: #0854a0;
+      transition: transform 0.3s;
+    }
+
+    .sap-tile.launch:hover .launch-icon {
+      transform: scale(1.1);
+    }
+
+    .sap-tile.launch.tile-green .launch-icon { color: #107e3e; }
+    .sap-tile.launch.tile-orange .launch-icon { color: #e26800; }
+    .sap-tile.launch.tile-red .launch-icon { color: #bb0000; }
+    .sap-tile.launch.tile-purple .launch-icon { color: #91007b; }
+
+    .launch-title {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+
+    .launch-description {
+      font-size: 0.75rem;
+      color: #666;
+      line-height: 1.4;
+    }
+
+    .launch-badge {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      background: #bb0000;
+      color: white;
+      border-radius: 10px;
+      padding: 0.15rem 0.5rem;
+      font-size: 0.65rem;
+      font-weight: bold;
+    }
+
+    /* Link List Tile - Multiple links */
+    .sap-tile.link-list {
+      min-height: 180px;
+      padding: 1rem;
+    }
+
+    .link-list-header {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #0854a0;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #e3f2fd;
+    }
+
+    .link-list-items {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .link-list-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.5rem 0.75rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+      color: #333;
+    }
+
+    .link-list-item:hover {
+      background: #f5f9ff;
+      transform: translateX(4px);
+    }
+
+    .link-list-item-icon {
+      font-size: 1rem;
+      color: #0854a0;
+      flex-shrink: 0;
+    }
+
+    .link-list-item-text {
+      flex: 1;
+      font-size: 0.8rem;
+      color: #333;
+    }
+
+    .link-list-item-arrow {
+      font-size: 0.75rem;
+      color: #999;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .link-list-item:hover .link-list-item-arrow {
+      opacity: 1;
+    }
+
+    .link-list-footer {
+      margin-top: 0.75rem;
+      padding-top: 0.5rem;
+      border-top: 1px solid #f0f0f0;
+      text-align: center;
+    }
+
+    .link-list-more {
+      font-size: 0.7rem;
+      color: #0854a0;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .link-list-more:hover {
+      color: #064080;
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>

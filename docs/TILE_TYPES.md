@@ -2,7 +2,7 @@
 
 ## Overview
 
-The dashboard now features **4 different SAP Fiori tile types**, each designed for specific use cases following SAP design guidelines.
+The dashboard now features **11 different SAP Fiori tile types**, each designed for specific use cases following SAP design guidelines. The latest additions include 3 new tile types with **SAP UI5 icon integration**.
 
 ---
 
@@ -279,6 +279,227 @@ All tiles except Feed tiles are clickable:
   </div>
   <div class="feed-author">System</div>
 </div>
+```
+
+---
+
+## 📊 Tile Type 9: KPI Tile (NEW)
+
+**Purpose**: Large number with status indicator and SAP icon
+
+### Visual Layout
+```
+┌─────────────────────────┐
+│ DATA QUALITY        🎯  │
+│                         │
+│      98 %              │
+│                         │
+│  ✓ Excellent           │
+│                         │
+│  📅 Last validated...  │
+└─────────────────────────┘
+```
+
+### Features
+- **Large value** (3rem font size)
+- **SAP UI5 icon** (watermark style)
+- **Status badge** (Good/Warning/Critical)
+- **Unit display** (%, $, etc.)
+- **Footer** with timestamp
+
+### Status Types
+- **Good**: Green background (#e8f5e9), green text (#107e3e)
+- **Warning**: Orange background (#fff3e0), orange text (#e26800)
+- **Critical**: Red background (#ffebee), red text (#bb0000)
+
+### SAP Icons Used
+- `&#xe1e2;` - Chart icon (watermark)
+- `&#xe1db;` - Calendar icon (footer)
+
+### Use Cases
+- Data quality percentage
+- Performance metrics
+- Completion rates
+- Health indicators
+
+### Code Example
+```html
+<div class="sap-tile kpi tile-green">
+  <div class="kpi-tile-header">
+    <div class="kpi-tile-title">Data Quality</div>
+    <div class="kpi-tile-icon sap-icon">&#xe1e2;</div>
+  </div>
+  <div>
+    <span class="kpi-tile-value">98</span>
+    <span class="kpi-tile-unit">%</span>
+  </div>
+  <div class="kpi-tile-status status-good">
+    <span>✓</span>
+    <span>Excellent</span>
+  </div>
+  <div class="kpi-tile-footer">
+    <span class="sap-icon">&#xe1db;</span>
+    <span>Last validated 11/30/2025</span>
+  </div>
+</div>
+```
+
+---
+
+## 🚀 Tile Type 10: Launch Tile (NEW)
+
+**Purpose**: App launcher with SAP icon and description
+
+### Visual Layout
+```
+┌─────────────────────────┐
+│                         │
+│         📊             │
+│                         │
+│       Charts           │
+│                         │
+│  Visualize your data   │
+│  with interactive...   │
+│                         │
+└─────────────────────────┘
+```
+
+### Features
+- **Large SAP icon** (3.5rem) with hover animation
+- **Title** and **description**
+- **Gradient background** on hover
+- **Scale animation** on icon hover
+- **Optional badge** for notifications
+
+### Hover Effects
+- Background: Linear gradient (white → light blue)
+- Transform: translateY(-4px)
+- Icon: scale(1.1)
+- Shadow: Enhanced depth
+
+### SAP Icons Used
+- `&#xe0c1;` - Bar chart icon
+
+### Use Cases
+- Navigation to different views
+- App launcher grid
+- Quick access tiles
+- Feature highlights
+
+### Code Example
+```html
+<div class="sap-tile launch tile-orange" data-action="graphs">
+  <div class="launch-icon sap-icon">&#xe0c1;</div>
+  <div class="launch-title">Charts</div>
+  <div class="launch-description">Visualize your data with interactive charts</div>
+</div>
+```
+
+---
+
+## 🔗 Tile Type 11: Link List Tile (NEW)
+
+**Purpose**: Multiple clickable links with SAP icons
+
+### Visual Layout
+```
+┌─────────────────────────┐
+│ Quick Actions          │
+│ ══════════════════════ │
+│                         │
+│ 📋 View Data Table   → │
+│ 📊 View Charts       → │
+│ 🏠 Dashboard         → │
+│                         │
+│ ─────────────────────  │
+│    View all actions    │
+└─────────────────────────┘
+```
+
+### Features
+- **Header** with bottom border
+- **Multiple links** (3-5 recommended)
+- **SAP icons** for each link
+- **Arrow indicator** (appears on hover)
+- **Slide-in animation** on hover
+- **Footer** with "more" link
+
+### Link States
+- Default: White background
+- Hover: Light blue background (#f5f9ff)
+- Transform: translateX(4px)
+- Arrow: Opacity 0 → 1
+
+### SAP Icons Used
+- `&#xe1b3;` - Table icon
+- `&#xe0c1;` - Bar chart icon
+- `&#xe112;` - Home icon
+
+### Use Cases
+- Quick navigation menu
+- Action shortcuts
+- Related links
+- Resource list
+
+### Code Example
+```html
+<div class="sap-tile link-list">
+  <div class="link-list-header">Quick Actions</div>
+  <div class="link-list-items">
+    <div class="link-list-item" data-action="data-table">
+      <span class="link-list-item-icon sap-icon">&#xe1b3;</span>
+      <span class="link-list-item-text">View Data Table</span>
+      <span class="link-list-item-arrow">→</span>
+    </div>
+  </div>
+  <div class="link-list-footer">
+    <div class="link-list-more">View all actions</div>
+  </div>
+</div>
+```
+
+---
+
+## 🎨 SAP UI5 Icon Integration
+
+### Icon Font Setup
+```css
+@font-face {
+  font-family: 'SAP-icons';
+  src: url('https://sapui5.hana.ondemand.com/sdk/resources/sap/ui/core/themes/base/fonts/SAP-icons.woff2') format('woff2');
+}
+
+.sap-icon {
+  font-family: 'SAP-icons';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+}
+```
+
+### Common SAP Icon Codes
+- `&#xe0c1;` - Bar chart
+- `&#xe1b3;` - Table
+- `&#xe112;` - Home
+- `&#xe1e2;` - Chart
+- `&#xe1db;` - Calendar
+- `&#xe0f3;` - Settings
+- `&#xe0b1;` - Filter
+- `&#xe0d5;` - Search
+- `&#xe1ed;` - Refresh
+- `&#xe22c;` - Download
+
+### Usage
+```html
+<!-- Inline -->
+<span class="sap-icon">&#xe0c1;</span>
+
+<!-- With color -->
+<span class="sap-icon" style="color: #0854a0;">&#xe0c1;</span>
+
+<!-- With size -->
+<span class="sap-icon" style="font-size: 2rem;">&#xe0c1;</span>
 ```
 
 ---

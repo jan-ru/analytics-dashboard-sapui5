@@ -1,5 +1,48 @@
 # Version History
 
+## v0.2.0 - SAP UI5 Icon Integration (2025-11-30)
+
+### 🎉 New Features
+
+#### 3 New Tile Types with SAP Icons
+9. **KPI Tile** - Large number with status indicator and SAP icon watermark
+10. **Launch Tile** - App launcher with SAP icon and gradient hover effect
+11. **Link List Tile** - Multiple clickable links with SAP icons
+
+#### SAP UI5 Icon Integration
+- Added SAP-icons font family from official SAP CDN
+- Integrated 3 SAP icons: Chart (&#xe0c1;), Table (&#xe1b3;), Home (&#xe112;)
+- Icon watermark support in KPI tiles
+- Icon-based navigation in Link List tiles
+- Documented 10+ common SAP icon codes
+
+#### Tile Enhancements
+- **KPI Tile**: 3-tier status system (Good/Warning/Critical)
+- **Launch Tile**: Scale animation on hover (1.0 → 1.1)
+- **Link List Tile**: Slide-in animation on item hover
+- Total tile types: 8 → 11 (+37.5%)
+
+### 🎨 Design Improvements
+- Added @font-face for SAP-icons with WOFF2 format
+- New CSS classes: `.kpi`, `.launch`, `.link-list`
+- SAP icon styling with antialiasing
+- Status badge styling (rounded, color-coded)
+- Gradient backgrounds on hover
+
+### 📚 Documentation
+- Updated TILE_TYPES.md with 3 new tile type guides
+- Added SAP UI5 Icon Integration section
+- Documented icon codes and usage patterns
+- Code examples for each new tile type
+
+### 🔧 Technical Details
+- Files modified: 3 (index-simple.html, tiles-view-simple.js, TILE_TYPES.md)
+- New CSS: ~250 lines for 3 tile types + icon support
+- Icon font loaded from: sapui5.hana.ondemand.com CDN
+- Event handlers: Added support for link-list navigation
+
+---
+
 ## v0.1.0 - Initial Release (2025-01-XX)
 
 ### 🎉 Features

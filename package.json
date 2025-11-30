@@ -1,7 +1,7 @@
 {
   "name": "sapui5-analytics-dashboard",
-  "version": "0.1.0",
-  "description": "Analytics Dashboard with SAP Fiori Tiles",
+  "version": "0.2.0",
+  "description": "Analytics Dashboard with SAP Fiori Tiles and SAP UI5 Icons",
   "type": "module",
   "scripts": {
     "test": "vitest",
