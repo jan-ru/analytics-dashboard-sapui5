@@ -61,23 +61,13 @@ export function showTilesViewSimple() {
         </div>
       </div>
 
-      <!-- Type 2: Numeric Content Tile - Records -->
+      <!-- Type 2: Numeric Content Tile -->
       <div class="sap-tile numeric-content" data-action="data-table">
         <div class="numeric-icon">📋</div>
         <div class="numeric-content-data">
           <div class="numeric-main-value">${metrics.rowCount.toLocaleString()}</div>
           <div class="numeric-label">Total Records</div>
           <div class="numeric-subtitle">Click to view data table</div>
-        </div>
-      </div>
-
-      <!-- Type 2: Numeric Content Tile - Columns -->
-      <div class="sap-tile numeric-content tile-green" data-action="columns">
-        <div class="numeric-icon">🔢</div>
-        <div class="numeric-content-data">
-          <div class="numeric-main-value">${metrics.columnCount}</div>
-          <div class="numeric-label">Data Columns</div>
-          <div class="numeric-subtitle">Available fields</div>
         </div>
       </div>
 
@@ -178,10 +168,70 @@ export function showTilesViewSimple() {
           <div class="link-list-more">View all actions</div>
         </div>
       </div>
+
+      <!-- Type 12: Progress Tile - Goal tracking -->
+      <div class="sap-tile progress tile-blue">
+        <div>
+          <div class="progress-tile-header">
+            <div class="progress-tile-title">Data Processing Goal</div>
+            <div class="progress-tile-icon">🎯</div>
+          </div>
+          <div class="progress-tile-metrics">
+            <div class="progress-current">${metrics.rowCount.toLocaleString()}</div>
+            <div class="progress-goal">/ 10,000 rows</div>
+          </div>
+          <div class="progress-bar-container">
+            <div class="progress-bar-fill" style="width: ${Math.min((metrics.rowCount / 10000) * 100, 100)}%"></div>
+          </div>
+          <div class="progress-percentage">${Math.min(Math.round((metrics.rowCount / 10000) * 100), 100)}%</div>
+        </div>
+        <div class="progress-footer">Updated ${new Date().toLocaleDateString()}</div>
+      </div>
+
+      <!-- Type 13: Notification Tile - Alert badge -->
+      <div class="sap-tile notification tile-orange">
+        <div class="notification-badge">${Object.keys(metrics.numericColumns).length}</div>
+        <div class="notification-title">Numeric Columns</div>
+        <div class="notification-subtitle">Detected in dataset</div>
+      </div>
+
+      <!-- Type 14: Timeline Tile - Activity log -->
+      <div class="sap-tile timeline">
+        <div class="timeline-header">
+          <span>Recent Activity</span>
+          <span class="sap-icon" style="font-size: 0.9rem;">&#xe1db;</span>
+        </div>
+        <div class="timeline-items">
+          <div class="timeline-item timeline-success">
+            <div class="timeline-time">Just now</div>
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-content-text">File uploaded successfully</div>
+              <div class="timeline-content-meta">${fileName}</div>
+            </div>
+          </div>
+          <div class="timeline-item timeline-success">
+            <div class="timeline-time">1m ago</div>
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-content-text">Data processed</div>
+              <div class="timeline-content-meta">${metrics.rowCount} rows analyzed</div>
+            </div>
+          </div>
+          <div class="timeline-item timeline-warning">
+            <div class="timeline-time">2m ago</div>
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-content-text">Validation complete</div>
+              <div class="timeline-content-meta">${metrics.columnCount} columns verified</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="card" style="margin-top: 2rem;">
-      <div class="card-header">Tile Types Reference (11 Types)</div>
+      <div class="card-header">Tile Types Reference (14 Types)</div>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1rem;">
         <div>
           <strong>1. Analytical Tile</strong>
@@ -226,6 +276,18 @@ export function showTilesViewSimple() {
         <div>
           <strong>11. Link List Tile</strong>
           <p style="margin: 0.5rem 0 0 0; color: #666; font-size: 0.9rem;">Multiple clickable links with SAP icons</p>
+        </div>
+        <div>
+          <strong>12. Progress Tile</strong>
+          <p style="margin: 0.5rem 0 0 0; color: #666; font-size: 0.9rem;">Goal tracking with animated progress bar</p>
+        </div>
+        <div>
+          <strong>13. Notification Tile</strong>
+          <p style="margin: 0.5rem 0 0 0; color: #666; font-size: 0.9rem;">Badge with count and pulse animation</p>
+        </div>
+        <div>
+          <strong>14. Timeline Tile</strong>
+          <p style="margin: 0.5rem 0 0 0; color: #666; font-size: 0.9rem;">Activity timeline with colored status dots</p>
         </div>
       </div>
     </div>

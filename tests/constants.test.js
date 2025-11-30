@@ -1,8 +1,8 @@
 /**
- * Unit Tests for Constants
+ * Unit Tests for Constants - Deno Test
  */
 
-import { describe, it, expect } from 'vitest';
+import { assertEquals, assert } from "https://deno.land/std@0.224.0/assert/mod.ts";
 import {
   ROUTES,
   SAP_COLORS,
@@ -14,138 +14,130 @@ import {
   ICONS
 } from '../js/constants.js';
 
-describe('ROUTES', () => {
-  it('should have all required route paths', () => {
-    expect(ROUTES.HOME).toBe('/');
-    expect(ROUTES.UPLOAD).toBe('/upload');
-    expect(ROUTES.DASHBOARD).toBe('/dashboard');
-    expect(ROUTES.GRAPHS).toBe('/graphs');
-    expect(ROUTES.TILES).toBe('/tiles');
-    expect(ROUTES.DATA).toBe('/data');
-    expect(ROUTES.ABOUT).toBe('/about');
-  });
+// ROUTES Tests
+Deno.test("ROUTES - should have all required route paths", () => {
+  assertEquals(ROUTES.HOME, '/');
+  assertEquals(ROUTES.UPLOAD, '/upload');
+  assertEquals(ROUTES.DASHBOARD, '/dashboard');
+  assertEquals(ROUTES.GRAPHS, '/graphs');
+  assertEquals(ROUTES.TILES, '/tiles');
+  assertEquals(ROUTES.DATA, '/data');
+  assertEquals(ROUTES.ABOUT, '/about');
+});
 
-  it('should have unique route values', () => {
-    const values = Object.values(ROUTES);
-    const uniqueValues = new Set(values);
-    expect(values.length).toBe(uniqueValues.size);
+Deno.test("ROUTES - should have unique route values", () => {
+  const values = Object.values(ROUTES);
+  const uniqueValues = new Set(values);
+  assertEquals(values.length, uniqueValues.size);
+});
+
+// SAP_COLORS Tests
+Deno.test("SAP_COLORS - should have valid hex color codes", () => {
+  const hexPattern = /^#[0-9a-f]{6}$/i;
+
+  assert(hexPattern.test(SAP_COLORS.BLUE));
+  assert(hexPattern.test(SAP_COLORS.GREEN));
+  assert(hexPattern.test(SAP_COLORS.ORANGE));
+  assert(hexPattern.test(SAP_COLORS.RED));
+  assert(hexPattern.test(SAP_COLORS.PURPLE));
+});
+
+Deno.test("SAP_COLORS - should have lighter variants for all main colors", () => {
+  assert(SAP_COLORS.BLUE_LIGHT !== undefined);
+  assert(SAP_COLORS.GREEN_LIGHT !== undefined);
+  assert(SAP_COLORS.ORANGE_LIGHT !== undefined);
+  assert(SAP_COLORS.RED_LIGHT !== undefined);
+  assert(SAP_COLORS.PURPLE_LIGHT !== undefined);
+});
+
+// TIMING Tests
+Deno.test("TIMING - should have positive millisecond values", () => {
+  assert(TIMING.SLIDE_ROTATION > 0);
+  assert(TIMING.VIEW_INIT_DELAY > 0);
+  assert(TIMING.TOAST_DURATION > 0);
+  assert(TIMING.TOAST_FADE_DURATION > 0);
+});
+
+Deno.test("TIMING - should have reasonable timing values", () => {
+  assertEquals(TIMING.SLIDE_ROTATION, 3000); // 3 seconds
+  assertEquals(TIMING.VIEW_INIT_DELAY, 100); // 100ms
+  assertEquals(TIMING.TOAST_DURATION, 3000); // 3 seconds
+  assertEquals(TIMING.TOAST_FADE_DURATION, 300); // 300ms
+});
+
+// FILE_UPLOAD Tests
+Deno.test("FILE_UPLOAD - should have valid file size limit", () => {
+  assertEquals(FILE_UPLOAD.MAX_SIZE, 10 * 1024 * 1024); // 10MB
+  assert(FILE_UPLOAD.MAX_SIZE > 0);
+});
+
+Deno.test("FILE_UPLOAD - should have allowed Excel extensions", () => {
+  assert(FILE_UPLOAD.ALLOWED_EXTENSIONS.includes('.xlsx'));
+  assert(FILE_UPLOAD.ALLOWED_EXTENSIONS.includes('.xls'));
+});
+
+Deno.test("FILE_UPLOAD - should have corresponding MIME types", () => {
+  assert(FILE_UPLOAD.ALLOWED_MIME_TYPES.length > 0);
+  assert(FILE_UPLOAD.ALLOWED_MIME_TYPES.includes('application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'));
+});
+
+// NUMBER_FORMAT Tests
+Deno.test("NUMBER_FORMAT - should have valid threshold values", () => {
+  assertEquals(NUMBER_FORMAT.MILLION_THRESHOLD, 1000000);
+  assertEquals(NUMBER_FORMAT.THOUSAND_THRESHOLD, 1000);
+  assert(NUMBER_FORMAT.MILLION_THRESHOLD > NUMBER_FORMAT.THOUSAND_THRESHOLD);
+});
+
+Deno.test("NUMBER_FORMAT - should have valid suffixes", () => {
+  assertEquals(NUMBER_FORMAT.MILLION_SUFFIX, 'M');
+  assertEquals(NUMBER_FORMAT.THOUSAND_SUFFIX, 'K');
+});
+
+Deno.test("NUMBER_FORMAT - should have valid decimal places", () => {
+  assertEquals(NUMBER_FORMAT.DECIMAL_PLACES, 1);
+  assert(NUMBER_FORMAT.DECIMAL_PLACES >= 0);
+});
+
+// TREND Tests
+Deno.test("TREND - should have valid threshold values", () => {
+  assertEquals(TREND.HIGH_THRESHOLD, 0.7);
+  assertEquals(TREND.LOW_THRESHOLD, 0.3);
+  assert(TREND.HIGH_THRESHOLD > TREND.LOW_THRESHOLD);
+});
+
+Deno.test("TREND - should have trend icons defined", () => {
+  assert(TREND.ICONS.UP !== undefined);
+  assert(TREND.ICONS.NEUTRAL !== undefined);
+  assert(TREND.ICONS.DOWN !== undefined);
+});
+
+// MESSAGES Tests
+Deno.test("MESSAGES - should have all required messages", () => {
+  assert(MESSAGES.NO_DATA !== undefined);
+  assert(MESSAGES.UPLOAD_REQUIRED !== undefined);
+  assert(MESSAGES.EXPORT_SUCCESS !== undefined);
+  assert(MESSAGES.EXPORT_FAILED !== undefined);
+});
+
+Deno.test("MESSAGES - should have non-empty message strings", () => {
+  Object.values(MESSAGES).forEach(message => {
+    assert(message);
+    assertEquals(typeof message, 'string');
+    assert(message.length > 0);
   });
 });
 
-describe('SAP_COLORS', () => {
-  it('should have valid hex color codes', () => {
-    const hexPattern = /^#[0-9a-f]{6}$/i;
-
-    expect(SAP_COLORS.BLUE).toMatch(hexPattern);
-    expect(SAP_COLORS.GREEN).toMatch(hexPattern);
-    expect(SAP_COLORS.ORANGE).toMatch(hexPattern);
-    expect(SAP_COLORS.RED).toMatch(hexPattern);
-    expect(SAP_COLORS.PURPLE).toMatch(hexPattern);
-  });
-
-  it('should have lighter variants for all main colors', () => {
-    expect(SAP_COLORS.BLUE_LIGHT).toBeDefined();
-    expect(SAP_COLORS.GREEN_LIGHT).toBeDefined();
-    expect(SAP_COLORS.ORANGE_LIGHT).toBeDefined();
-    expect(SAP_COLORS.RED_LIGHT).toBeDefined();
-    expect(SAP_COLORS.PURPLE_LIGHT).toBeDefined();
-  });
+// ICONS Tests
+Deno.test("ICONS - should have all commonly used icons", () => {
+  assert(ICONS.UPLOAD !== undefined);
+  assert(ICONS.DOWNLOAD !== undefined);
+  assert(ICONS.CHART !== undefined);
+  assert(ICONS.DATA !== undefined);
 });
 
-describe('TIMING', () => {
-  it('should have positive millisecond values', () => {
-    expect(TIMING.SLIDE_ROTATION).toBeGreaterThan(0);
-    expect(TIMING.VIEW_INIT_DELAY).toBeGreaterThan(0);
-    expect(TIMING.TOAST_DURATION).toBeGreaterThan(0);
-    expect(TIMING.TOAST_FADE_DURATION).toBeGreaterThan(0);
-  });
-
-  it('should have reasonable timing values', () => {
-    expect(TIMING.SLIDE_ROTATION).toBe(3000); // 3 seconds
-    expect(TIMING.VIEW_INIT_DELAY).toBe(100); // 100ms
-    expect(TIMING.TOAST_DURATION).toBe(3000); // 3 seconds
-    expect(TIMING.TOAST_FADE_DURATION).toBe(300); // 300ms
-  });
-});
-
-describe('FILE_UPLOAD', () => {
-  it('should have valid file size limit', () => {
-    expect(FILE_UPLOAD.MAX_SIZE).toBe(10 * 1024 * 1024); // 10MB
-    expect(FILE_UPLOAD.MAX_SIZE).toBeGreaterThan(0);
-  });
-
-  it('should have allowed Excel extensions', () => {
-    expect(FILE_UPLOAD.ALLOWED_EXTENSIONS).toContain('.xlsx');
-    expect(FILE_UPLOAD.ALLOWED_EXTENSIONS).toContain('.xls');
-  });
-
-  it('should have corresponding MIME types', () => {
-    expect(FILE_UPLOAD.ALLOWED_MIME_TYPES.length).toBeGreaterThan(0);
-    expect(FILE_UPLOAD.ALLOWED_MIME_TYPES).toContain('application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-  });
-});
-
-describe('NUMBER_FORMAT', () => {
-  it('should have valid threshold values', () => {
-    expect(NUMBER_FORMAT.MILLION_THRESHOLD).toBe(1000000);
-    expect(NUMBER_FORMAT.THOUSAND_THRESHOLD).toBe(1000);
-    expect(NUMBER_FORMAT.MILLION_THRESHOLD).toBeGreaterThan(NUMBER_FORMAT.THOUSAND_THRESHOLD);
-  });
-
-  it('should have valid suffixes', () => {
-    expect(NUMBER_FORMAT.MILLION_SUFFIX).toBe('M');
-    expect(NUMBER_FORMAT.THOUSAND_SUFFIX).toBe('K');
-  });
-
-  it('should have valid decimal places', () => {
-    expect(NUMBER_FORMAT.DECIMAL_PLACES).toBe(1);
-    expect(NUMBER_FORMAT.DECIMAL_PLACES).toBeGreaterThanOrEqual(0);
-  });
-});
-
-describe('TREND', () => {
-  it('should have valid threshold values', () => {
-    expect(TREND.HIGH_THRESHOLD).toBe(0.7);
-    expect(TREND.LOW_THRESHOLD).toBe(0.3);
-    expect(TREND.HIGH_THRESHOLD).toBeGreaterThan(TREND.LOW_THRESHOLD);
-  });
-
-  it('should have trend icons defined', () => {
-    expect(TREND.ICONS.UP).toBeDefined();
-    expect(TREND.ICONS.NEUTRAL).toBeDefined();
-    expect(TREND.ICONS.DOWN).toBeDefined();
-  });
-});
-
-describe('MESSAGES', () => {
-  it('should have all required messages', () => {
-    expect(MESSAGES.NO_DATA).toBeDefined();
-    expect(MESSAGES.UPLOAD_REQUIRED).toBeDefined();
-    expect(MESSAGES.EXPORT_SUCCESS).toBeDefined();
-    expect(MESSAGES.EXPORT_FAILED).toBeDefined();
-  });
-
-  it('should have non-empty message strings', () => {
-    Object.values(MESSAGES).forEach(message => {
-      expect(message).toBeTruthy();
-      expect(typeof message).toBe('string');
-      expect(message.length).toBeGreaterThan(0);
-    });
-  });
-});
-
-describe('ICONS', () => {
-  it('should have all commonly used icons', () => {
-    expect(ICONS.UPLOAD).toBeDefined();
-    expect(ICONS.DOWNLOAD).toBeDefined();
-    expect(ICONS.CHART).toBeDefined();
-    expect(ICONS.DATA).toBeDefined();
-  });
-
-  it('should have emoji or string values', () => {
-    Object.values(ICONS).forEach(icon => {
-      expect(typeof icon).toBe('string');
-      expect(icon.length).toBeGreaterThan(0);
-    });
+Deno.test("ICONS - should have emoji or string values", () => {
+  Object.values(ICONS).forEach(icon => {
+    assertEquals(typeof icon, 'string');
+    assert(icon.length > 0);
   });
 });

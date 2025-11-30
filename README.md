@@ -17,8 +17,9 @@ A modern, lightweight analytics dashboard application built with SAPUI5 Web Comp
 
 - **UI Framework**: [UI5 Web Components v2.16.2](https://sap.github.io/ui5-webcomponents/)
 - **Charts**: [Chart.js v4.4.0](https://www.chartjs.org/)
-- **Excel Processing**: [SheetJS (xlsx) v0.20.3](https://docs.sheetjs.com/)
+- **Excel Processing**: [ExcelJS v4.4.0](https://github.com/exceljs/exceljs)
 - **Routing**: [Navigo v8.11.1](https://github.com/krasimir/navigo)
+- **Testing**: [Deno Test](https://deno.land/)
 - **Module System**: ES Modules with Import Maps
 - **No Build Tools**: Pure HTML/CSS/JavaScript
 

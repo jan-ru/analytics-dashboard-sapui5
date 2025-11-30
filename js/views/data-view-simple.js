@@ -101,9 +101,9 @@ function attachHandlers() {
 
   // Export
   if (exportBtn) {
-    exportBtn.addEventListener('click', () => {
+    exportBtn.addEventListener('click', async () => {
       const data = getProcessedData();
-      const success = exportToExcel(data, 'data-export');
+      const success = await exportToExcel(data, 'data-export');
       alert(success ? 'Data exported successfully!' : 'Export failed');
     });
   }

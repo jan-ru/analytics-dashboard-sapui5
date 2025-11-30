@@ -98,8 +98,8 @@ function renderNumericColumnsSummary(metrics) {
 function attachHandlers() {
   const exportBtn = document.getElementById('exportBtn');
   if (exportBtn) {
-    exportBtn.addEventListener('click', () => {
-      const success = exportToExcel(window.appState.currentData, 'dashboard-export');
+    exportBtn.addEventListener('click', async () => {
+      const success = await exportToExcel(window.appState.currentData, 'dashboard-export');
       if (success) {
         showSuccess(MESSAGES.EXPORT_SUCCESS);
       } else {

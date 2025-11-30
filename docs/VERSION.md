@@ -1,5 +1,52 @@
 # Version History
 
+## v0.3.0 - Major Update: Deno, ExcelJS, 14 Tile Types (2025-11-30)
+
+### 🎉 New Features
+
+#### 3 Additional Tile Types
+12. **Progress Tile** - Goal tracking with animated gradient progress bar
+13. **Notification Tile** - Badge with count and pulse animation
+14. **Timeline Tile** - Activity feed with colored status dots
+
+Total tile types: 11 → 14 (+27%)
+
+#### Testing Framework Migration
+- **Replaced Vitest with Deno Test**
+  - Converted all test files to Deno format
+  - Uses native Deno assertions (assertEquals, assert)
+  - Faster test execution with built-in Deno runtime
+  - No node_modules required
+  - Updated npm scripts to use `deno test`
+
+#### Excel Library Upgrade
+- **Replaced SheetJS with ExcelJS v4.4.0**
+  - Better TypeScript support
+  - Enhanced styling capabilities (bold headers, colored backgrounds)
+  - Modern async/await API
+  - Smaller bundle size
+  - More actively maintained
+
+### 🔧 Code Quality Improvements
+- Removed duplicate Numeric Content tile (was showing same type twice)
+- Made all exportToExcel calls async/await
+- Updated 3 view files to handle async Excel exports
+- Removed vitest.config.js and tests/setup.js
+
+### 🎨 New Tile Features
+- **Progress Tile**: Shimmer animation on progress bar, percentage display
+- **Notification Tile**: Pulsing badge animation, red notification dot
+- **Timeline Tile**: Color-coded activity dots (success/warning/error)
+
+### 📊 Statistics
+- Total tile types: 14 (was 11)
+- Test files converted: 2
+- View files updated: 3
+- Dependencies removed: 4 (vitest packages)
+- New animations: 2 (shimmer, pulse)
+
+---
+
 ## v0.2.0 - SAP UI5 Icon Integration (2025-11-30)
 
 ### 🎉 New Features

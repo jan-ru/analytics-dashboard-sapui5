@@ -1,19 +1,13 @@
 {
   "name": "sapui5-analytics-dashboard",
-  "version": "0.2.0",
-  "description": "Analytics Dashboard with SAP Fiori Tiles and SAP UI5 Icons",
+  "version": "0.3.0",
+  "description": "Analytics Dashboard with 14 SAP Fiori Tile Types",
   "type": "module",
   "scripts": {
-    "test": "vitest",
-    "test:ui": "vitest --ui",
-    "test:coverage": "vitest --coverage",
-    "test:run": "vitest run"
-  },
-  "devDependencies": {
-    "@vitest/ui": "^1.0.0",
-    "@vitest/coverage-v8": "^1.0.0",
-    "vitest": "^1.0.0",
-    "jsdom": "^23.0.0"
+    "test": "deno test --allow-read",
+    "test:watch": "deno test --allow-read --watch",
+    "test:coverage": "deno test --allow-read --coverage=coverage",
+    "test:coverage-report": "deno coverage coverage --lcov --output=coverage.lcov"
   },
   "keywords": [
     "sapui5",
