@@ -1,5 +1,41 @@
 # Version History
 
+## v0.4.0 - Added Chart Types Showcase Page (2025-11-30)
+
+### 🎉 New Features
+
+#### Chart Types Page
+- **New dedicated page** showcasing 6 different Chart.js chart types
+- **Line Chart**: Trend visualization with area fill
+- **Bar Chart**: Category comparison with colorful bars
+- **Radar Chart**: Multi-variable analysis with multiple datasets
+- **Doughnut Chart**: Proportional data with legend
+- **Polar Area Chart**: Circular data visualization
+- **Bubble Chart**: 3-dimensional relationship display
+
+#### Page Features
+- Side-by-side comparison grid layout (2 columns)
+- Chart type descriptions and use cases
+- Comprehensive comparison table
+- Automatic data visualization from uploaded Excel files
+- Uses first 6 records for optimal visibility
+- Multi-color palette using SAP Fiori colors
+
+### 🔧 Technical Implementation
+- New file: `js/views/chart-types-view-simple.js` (300+ lines)
+- Added `/chart-types` route to router
+- Added "Chart Types" navigation menu item
+- Updated constants with new CHART_TYPES route
+- Charts auto-destroy on view change (memory management)
+
+### 📊 Statistics
+- Total navigation pages: 6 → 7
+- Chart types displayed: 6
+- Lines of code added: ~300
+- New route added: `/chart-types`
+
+---
+
 ## v0.3.0 - Major Update: Deno, ExcelJS, 14 Tile Types (2025-11-30)
 
 ### 🎉 New Features

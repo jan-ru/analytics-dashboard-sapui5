@@ -6,9 +6,10 @@ A modern, lightweight analytics dashboard application built with SAPUI5 Web Comp
 
 - **Excel File Upload**: Upload .xlsx or .xls files directly from your local filesystem
 - **Interactive Dashboard**: View your data through KPI cards and dynamic charts
-- **Multiple Chart Types**: Bar charts, line charts, and pie charts powered by Chart.js
+- **6 Chart Types Showcase**: Line, Bar, Radar, Doughnut, Polar Area, and Bubble charts
+- **14 SAP Fiori Tiles**: Complete tile showcase including Progress, Notification, and Timeline tiles
 - **Data Table**: Sort and filter your data in an interactive table
-- **Excel Export**: Export your data (with filters and sorting applied) back to Excel
+- **Excel Export**: Export your data (with filters and sorting applied) back to Excel with styled headers
 - **Fully Client-Side**: All processing happens in your browser—your data never leaves your machine
 - **No Build Required**: CDN-based architecture with zero compilation needed
 - **Responsive Design**: Works on desktop, tablet, and mobile devices

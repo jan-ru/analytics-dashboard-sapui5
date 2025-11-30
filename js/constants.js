@@ -12,6 +12,7 @@ export const ROUTES = {
   UPLOAD: '/upload',
   DASHBOARD: '/dashboard',
   GRAPHS: '/graphs',
+  CHART_TYPES: '/chart-types',
   TILES: '/tiles',
   DATA: '/data',
   ABOUT: '/about'

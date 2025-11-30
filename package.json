@@ -1,7 +1,7 @@
 {
   "name": "sapui5-analytics-dashboard",
-  "version": "0.3.0",
-  "description": "Analytics Dashboard with 14 SAP Fiori Tile Types",
+  "version": "0.4.0",
+  "description": "Analytics Dashboard with 14 Tiles and 6 Chart Types",
   "type": "module",
   "scripts": {
     "test": "deno test --allow-read",
