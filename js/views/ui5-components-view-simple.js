@@ -145,9 +145,10 @@ export function showUi5ComponentsViewSimple() {
 
     <!-- Analytical Cards Section -->
     <div class="card" style="margin-top: 2rem;">
-      <div class="card-header">ui5-analytical-card - Analytics Cards (Fiori)</div>
+      <div class="card-header">Custom Analytical Cards (Fiori-style)</div>
       <p style="margin: 1rem 0; color: #666;">
-        Analytical cards display KPIs, trends, and business metrics with visual indicators.
+        Custom analytical cards display KPIs, trends, and business metrics with visual indicators.
+        Built with pure HTML/CSS following SAP Fiori design patterns.
       </p>
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
@@ -298,11 +299,11 @@ export function showUi5ComponentsViewSimple() {
           </ul>
         </div>
         <div>
-          <strong>ui5-analytical-card</strong>
+          <strong>Custom Analytical Cards</strong>
           <ul style="margin: 0.5rem 0 0 1.5rem; color: #666; font-size: 0.875rem;">
             <li>KPI visualization</li>
             <li>Trend indicators</li>
-            <li>Chart integration</li>
+            <li>SAP Fiori styling</li>
           </ul>
         </div>
         <div>

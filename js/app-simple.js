@@ -6,43 +6,6 @@ import { initRouter } from './router-simple.js';
 import { initAppState } from './utils/data-processor.js';
 
 /**
- * Load UI5 Web Components dynamically using script tags
- */
-async function loadUI5Components() {
-  const BASE = 'https://cdn.jsdelivr.net/npm/@ui5/webcomponents@2.16.2/dist/';
-  const BASE_FIORI = 'https://cdn.jsdelivr.net/npm/@ui5/webcomponents-fiori@2.16.2/dist/';
-
-  const components = [
-    `${BASE}Card.js`,
-    `${BASE}Input.js`,
-    `${BASE_FIORI}AnalyticalCard.js`,
-    `${BASE_FIORI}ShellBar.js`
-  ];
-
-  try {
-    // Load components by creating script tags
-    const promises = components.map(url => {
-      return new Promise((resolve, reject) => {
-        const script = document.createElement('script');
-        script.type = 'module';
-        script.src = url;
-        script.onload = () => resolve();
-        script.onerror = () => reject(new Error(`Failed to load ${url}`));
-        document.head.appendChild(script);
-      });
-    });
-
-    await Promise.all(promises);
-    console.log('✅ UI5 Web Components loaded successfully');
-    return true;
-  } catch (error) {
-    console.error('❌ Failed to load UI5 Web Components:', error);
-    console.warn('⚠️ Continuing without UI5 Web Components...');
-    return false;
-  }
-}
-
-/**
  * Initialize the application
  */
 async function initApp() {
@@ -51,9 +14,8 @@ async function initApp() {
   // Wait for OpenUI5 core to be ready
   await waitForOpenUI5();
 
-  // Load UI5 Web Components
-  console.log('📦 Loading UI5 Web Components...');
-  await loadUI5Components();
+  // UI5 Web Components are loaded via HTML script tags
+  console.log('📦 UI5 Web Components loading from HTML...');
 
   // Initialize application state
   initAppState();
