@@ -1,0 +1,89 @@
+<mvc:View
+  controllerName="analytics.dashboard.controller.Upload"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:unified="sap.ui.unified"
+  displayBlock="true"
+  height="100%">
+
+  <Page
+    id="uploadPage"
+    title="Upload Excel File"
+    showNavButton="false">
+
+    <content>
+      <VBox
+        alignItems="Center"
+        justifyContent="Center"
+        class="sapUiMediumMarginTop">
+
+        <Title
+          text="Welcome to Analytics Dashboard"
+          level="H1"
+          class="sapUiMediumMarginBottom" />
+
+        <Text
+          text="Upload your Excel file to start analyzing your data"
+          class="sapUiMediumMarginBottom" />
+
+        <VBox
+          width="600px"
+          class="sapUiMediumMarginTop">
+
+          <Panel
+            headerText="Upload Excel File"
+            class="sapUiResponsiveMargin">
+
+            <content>
+              <VBox class="sapUiSmallMargin">
+                <Label
+                  text="Select an Excel file (.xlsx or .xls)"
+                  labelFor="fileUploader"
+                  class="sapUiTinyMarginBottom" />
+
+                <unified:FileUploader
+                  id="fileUploader"
+                  name="excelFile"
+                  uploadUrl="upload/"
+                  tooltip="Upload Excel file"
+                  placeholder="Choose a file..."
+                  fileType="xlsx,xls"
+                  maximumFileSize="10"
+                  change=".onFileChange"
+                  uploadComplete=".onUploadComplete"
+                  class="sapUiSmallMarginBottom" />
+
+                <Text
+                  text="Maximum file size: 10MB"
+                  class="sapUiTinyMarginTop sapUiTinyMarginBottom" />
+
+                <Button
+                  id="processButton"
+                  text="Process File"
+                  type="Emphasized"
+                  icon="sap-icon://upload"
+                  press=".onProcessFile"
+                  enabled="false"
+                  class="sapUiMediumMarginTop" />
+
+                <MessageStrip
+                  id="statusMessage"
+                  text=""
+                  type="Information"
+                  showIcon="true"
+                  visible="false"
+                  class="sapUiSmallMarginTop" />
+
+              </VBox>
+            </content>
+
+          </Panel>
+
+        </VBox>
+
+      </VBox>
+    </content>
+
+  </Page>
+
+</mvc:View>

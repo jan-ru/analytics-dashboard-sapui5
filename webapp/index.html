@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<style>
+		html, body, #content {
+			height: 100vh !important;
+			width: 100vw !important;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			position: relative;
+		}
+
+		/* Hide UI5 internal divs */
+		#sap-ui-static,
+		#sap-ui-preserve {
+			display: none !important;
+		}
+
+		/* Component container - use viewport units and !important */
+		div[data-sap-ui-component][data-name="analytics.dashboard"] {
+			height: 100vh !important;
+			width: 100vw !important;
+			display: block !important;
+			position: relative !important;
+			float: none !important;
+			overflow: visible !important;
+		}
+
+		/* UI Area container */
+		div[data-sap-ui-area] {
+			height: 100vh !important;
+			width: 100vw !important;
+			display: block !important;
+			position: relative !important;
+		}
+
+		/* Component content wrapper */
+		#container-analytics\.dashboard,
+		#container-analytics\.dashboard-uiarea {
+			height: 100vh !important;
+			width: 100vw !important;
+			display: block !important;
+		}
+
+		/* FlexibleColumnLayout should fill space */
+		.sapFFlexibleColumnLayout {
+			height: 100vh !important;
+			width: 100vw !important;
+		}
+	</style>
+	<script
+			id="sap-ui-bootstrap"
+			src="resources/sap-ui-core.js"
+			data-sap-ui-theme="sap_horizon"
+			data-sap-ui-resourceroots='{
+            "analytics.dashboard": "."
+        }'
+			data-sap-ui-oninit="module:sap/ui/core/ComponentSupport"
+			data-sap-ui-compatVersion="edge"
+			data-sap-ui-async="true"
+			data-sap-ui-preload=""
+			data-sap-ui-xx-componentPreload="off"
+			data-sap-ui-libs="sap.m,sap.f,sap.ui.table,sap.ui.unified">
+	</script>
+	<!-- ExcelJS Library for Excel file processing -->
+	<script src="https://cdn.jsdelivr.net/npm/exceljs@4.4.0/dist/exceljs.min.js"></script>
+</head>
+<body class="sapUiBody sapUiSizeCompact" id="content">
+<div data-sap-ui-component data-name="analytics.dashboard" data-id="container" data-settings='{"id" : "analytics.dashboard"}' data-handle-validation="true"></div>
+</body>
+</html>

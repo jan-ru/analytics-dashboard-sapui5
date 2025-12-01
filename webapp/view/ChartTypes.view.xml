@@ -1,0 +1,38 @@
+<mvc:View
+  controllerName="analytics.dashboard.controller.ChartTypes"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:html="http://www.w3.org/1999/xhtml"
+  displayBlock="true"
+  height="100%">
+
+  <Page
+    id="chartTypesPage"
+    title="Chart Visualizations"
+    showNavButton="false">
+
+    <content>
+      <ScrollContainer height="100%" vertical="true">
+        <VBox class="sapUiSmallMargin">
+
+          <Title
+            text="Data Visualizations"
+            level="H2"
+            class="sapUiSmallMarginBottom" />
+
+          <Text
+            text="Interactive charts powered by Chart.js"
+            class="sapUiMediumMarginBottom" />
+
+          <!-- Chart Grid -->
+          <VBox id="chartContainer" class="sapUiSmallMargin">
+            <!-- Charts will be dynamically rendered here by controller -->
+          </VBox>
+
+        </VBox>
+      </ScrollContainer>
+    </content>
+
+  </Page>
+
+</mvc:View>

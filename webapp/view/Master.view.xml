@@ -1,0 +1,104 @@
+<mvc:View
+  controllerName="analytics.dashboard.controller.Master"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc"
+  displayBlock="true"
+  height="100%">
+
+  <Page
+    id="masterPage"
+    title="Analytics Dashboard"
+    titleAlignment="Center"
+    class="sapUiResponsiveContentPadding">
+
+    <headerContent>
+      <Image
+        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E📊%3C/text%3E%3C/svg%3E"
+        width="2rem"
+        height="2rem" />
+    </headerContent>
+
+    <content>
+      <List
+        id="navigationList"
+        mode="SingleSelectMaster"
+        selectionChange=".onSelectionChange">
+
+        <StandardListItem
+          id="navUpload"
+          title="Upload"
+          description="Upload Excel files"
+          icon="sap-icon://upload"
+          type="Navigation"
+          press=".onNavToUpload" />
+
+        <StandardListItem
+          id="navDashboard"
+          title="Dashboard"
+          description="View analytics"
+          icon="sap-icon://business-objects-experience"
+          type="Navigation"
+          press=".onNavToDashboard" />
+
+        <StandardListItem
+          id="navChartTypes"
+          title="Chart Types"
+          description="Chart showcase"
+          icon="sap-icon://line-chart"
+          type="Navigation"
+          press=".onNavToChartTypes" />
+
+        <StandardListItem
+          id="navTiles"
+          title="SAP Tiles"
+          description="Fiori tiles showcase"
+          icon="sap-icon://grid"
+          type="Navigation"
+          press=".onNavToTiles" />
+
+        <StandardListItem
+          id="navUi5Components"
+          title="UI5 Components"
+          description="Components showcase"
+          icon="sap-icon://puzzle"
+          type="Navigation"
+          press=".onNavToUi5Components" />
+
+        <StandardListItem
+          id="navSapIcons"
+          title="SAP Icons"
+          description="Icon library"
+          icon="sap-icon://menu"
+          type="Navigation"
+          press=".onNavToSapIcons" />
+
+        <StandardListItem
+          id="navSapColors"
+          title="SAP Colors"
+          description="Color palette"
+          icon="sap-icon://palette"
+          type="Navigation"
+          press=".onNavToSapColors" />
+
+        <StandardListItem
+          id="navData"
+          title="Data Table"
+          description="Browse data"
+          icon="sap-icon://table-view"
+          type="Navigation"
+          press=".onNavToData" />
+
+        <StandardListItem
+          id="navAbout"
+          title="About"
+          description="App information"
+          icon="sap-icon://information"
+          type="Navigation"
+          press=".onNavToAbout" />
+
+      </List>
+    </content>
+
+  </Page>
+
+</mvc:View>

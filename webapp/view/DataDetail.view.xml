@@ -1,0 +1,36 @@
+<mvc:View
+  controllerName="analytics.dashboard.controller.DataDetail"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc"
+  displayBlock="true"
+  height="100%">
+
+  <Page
+    id="dataDetailPage"
+    title="Data Detail"
+    showNavButton="true"
+    navButtonPress=".onNavBack">
+
+    <content>
+      <VBox class="sapUiSmallMargin">
+
+        <Title
+          text="Row Details"
+          level="H2"
+          class="sapUiSmallMarginBottom" />
+
+        <ObjectHeader
+          id="objectHeader"
+          title="Row {appData>/selectedRow/id}"
+          class="sapUiSmallMarginBottom" />
+
+        <VBox id="detailContent" class="sapUiSmallMargin">
+          <!-- Details will be dynamically rendered -->
+        </VBox>
+
+      </VBox>
+    </content>
+
+  </Page>
+
+</mvc:View>

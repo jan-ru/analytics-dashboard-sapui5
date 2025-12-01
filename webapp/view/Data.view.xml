@@ -1,0 +1,43 @@
+<mvc:View
+  controllerName="analytics.dashboard.controller.Data"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:table="sap.ui.table"
+  displayBlock="true"
+  height="100%">
+
+  <Page
+    id="dataPage"
+    title="Data Table"
+    showNavButton="false">
+
+    <headerContent>
+      <Button
+        id="exportButton"
+        text="Export"
+        icon="sap-icon://excel-attachment"
+        press=".onExport" />
+    </headerContent>
+
+    <subHeader>
+      <Toolbar>
+        <SearchField
+          id="searchField"
+          width="50%"
+          placeholder="Search..."
+          search=".onSearch" />
+        <ToolbarSpacer />
+        <Text id="rowCount" text="0 rows" />
+      </Toolbar>
+    </subHeader>
+
+    <content>
+      <!-- Table will be created dynamically in controller -->
+      <VBox id="tableContainer" height="100%" width="100%">
+        <Text text="Loading data..." class="sapUiSmallMargin" />
+      </VBox>
+    </content>
+
+  </Page>
+
+</mvc:View>

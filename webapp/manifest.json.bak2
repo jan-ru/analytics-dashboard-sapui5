@@ -1,0 +1,292 @@
+{
+  "_version": "1.59.0",
+  "sap.app": {
+    "id": "analytics.dashboard",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "title": "Analytics Dashboard",
+    "description": "Excel Analytics Dashboard with FlexibleColumnLayout",
+    "applicationVersion": {
+      "version": "2.0.0"
+    },
+    "dataSources": {},
+    "sourceTemplate": {
+      "id": "@sap/ux-app-migrator:freestyle",
+      "version": "1.19.6",
+      "toolsId": "dd194fec-eedc-4b85-8183-18d69ee30bfa"
+    },
+    "crossNavigation": {
+      "inbounds": {
+        "Actuals-analyze": {
+          "semanticObject": "Actuals",
+          "action": "analyze",
+          "title": "{{Actuals-analyze.flpTitle}}",
+          "subTitle": "{{Actuals-analyze.flpSubtitle}}",
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          }
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.108.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.f": {},
+        "sap.ui.layout": {},
+        "sap.ui.table": {},
+        "sap.ui.unified": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "analytics.dashboard.i18n.i18n"
+        }
+      },
+      "appData": {
+        "type": "sap.ui.model.json.JSONModel",
+        "preload": true
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.f.routing.Router",
+        "type": "View",
+        "viewType": "XML",
+        "path": "analytics.dashboard.view",
+        "bypassed": {
+          "target": "notFound"
+        },
+        "async": true
+      },
+      "routes": [
+        {
+          "pattern": "",
+          "name": "main",
+          "target": [
+            "master",
+            "upload"
+          ]
+        },
+        {
+          "pattern": "upload",
+          "name": "upload",
+          "target": [
+            "master",
+            "upload"
+          ]
+        },
+        {
+          "pattern": "dashboard",
+          "name": "dashboard",
+          "target": [
+            "master",
+            "dashboard"
+          ]
+        },
+        {
+          "pattern": "chart-types",
+          "name": "chartTypes",
+          "target": [
+            "master",
+            "chartTypes"
+          ]
+        },
+        {
+          "pattern": "tiles",
+          "name": "tiles",
+          "target": [
+            "master",
+            "tiles"
+          ]
+        },
+        {
+          "pattern": "ui5-components",
+          "name": "ui5Components",
+          "target": [
+            "master",
+            "ui5Components"
+          ]
+        },
+        {
+          "pattern": "sap-icons",
+          "name": "sapIcons",
+          "target": [
+            "master",
+            "sapIcons"
+          ]
+        },
+        {
+          "pattern": "sap-colors",
+          "name": "sapColors",
+          "target": [
+            "master",
+            "sapColors"
+          ]
+        },
+        {
+          "pattern": "data",
+          "name": "data",
+          "target": [
+            "master",
+            "data"
+          ]
+        },
+        {
+          "pattern": "data/{rowId}",
+          "name": "dataDetail",
+          "target": [
+            "master",
+            "data",
+            "dataDetail"
+          ]
+        },
+        {
+          "pattern": "about",
+          "name": "about",
+          "target": [
+            "master",
+            "about"
+          ]
+        }
+      ],
+      "targets": {
+        "master": {
+          "type": "View",
+          "id": "master",
+          "name": "Master",
+          "level": 0,
+          "controlId": "app--layout",
+          "controlAggregation": "beginColumnPages"
+        },
+        "upload": {
+          "type": "View",
+          "id": "upload",
+          "name": "Upload",
+          "level": 1,
+          "controlId": "app--layout",
+          "controlId": "app--layout",
+          "controlAggregation": "midColumnPages"
+        },
+        "dashboard": {
+          "type": "View",
+          "id": "dashboard",
+          "name": "Dashboard",
+          "level": 1,
+          "controlId": "app--layout",
+          "controlId": "app--layout",
+          "controlAggregation": "midColumnPages"
+        },
+        "chartTypes": {
+          "type": "View",
+          "id": "chartTypes",
+          "name": "ChartTypes",
+          "level": 1,
+          "controlId": "app--layout",
+          "controlAggregation": "midColumnPages"
+        },
+        "tiles": {
+          "type": "View",
+          "id": "tiles",
+          "name": "Tiles",
+          "level": 1,
+          "controlId": "app--layout",
+          "controlAggregation": "midColumnPages"
+        },
+        "ui5Components": {
+          "type": "View",
+          "id": "ui5Components",
+          "name": "Ui5Components",
+          "level": 1,
+          "controlId": "app--layout",
+          "controlAggregation": "midColumnPages"
+        },
+        "sapIcons": {
+          "type": "View",
+          "id": "sapIcons",
+          "name": "SapIcons",
+          "level": 1,
+          "controlId": "app--layout",
+          "controlAggregation": "midColumnPages"
+        },
+        "sapColors": {
+          "type": "View",
+          "id": "sapColors",
+          "name": "SapColors",
+          "level": 1,
+          "controlId": "app--layout",
+          "controlAggregation": "midColumnPages"
+        },
+        "data": {
+          "type": "View",
+          "id": "data",
+          "name": "Data",
+          "level": 1,
+          "controlId": "app--layout",
+          "controlAggregation": "midColumnPages"
+        },
+        "dataDetail": {
+          "type": "View",
+          "id": "dataDetail",
+          "name": "DataDetail",
+          "level": 2,
+          "controlAggregation": "endColumnPages"
+        },
+        "about": {
+          "type": "View",
+          "id": "about",
+          "name": "About",
+          "level": 1,
+          "controlId": "app--layout",
+          "controlAggregation": "midColumnPages"
+        },
+        "notFound": {
+          "type": "View",
+          "id": "notFound",
+          "name": "NotFound",
+          "level": 1
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "analytics.dashboard.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "app"
+    }
+  }
+}

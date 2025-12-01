@@ -1541,6 +1541,32 @@
       --sapShellBar_Background: #0854a0;
       --sapShellBar_TextColor: #ffffff;
     }
+
+    /* ========================================
+       DEBUG STYLES - FOR DIAGNOSING RENDERING ISSUE
+       REMOVE AFTER FIXING
+       ======================================== */
+    #content {
+      background: rgba(0, 255, 0, 0.1) !important; /* Lime tint - visible if element renders */
+      min-height: 500px !important;
+      border: 5px solid red !important;
+    }
+
+    #content > * {
+      border: 1px dotted blue !important; /* Show all direct children */
+    }
+
+    #content .card {
+      background: rgba(255, 255, 0, 0.3) !important; /* Yellow highlight for cards */
+    }
+
+    /* Force visibility */
+    .content {
+      display: block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+    /* ======================================== */
   </style>
 </head>
 <body>

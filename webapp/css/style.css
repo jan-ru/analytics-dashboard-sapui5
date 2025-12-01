@@ -1,0 +1,163 @@
+/* Analytics Dashboard - Custom Styles for OpenUI5 Application */
+
+/* Global styles */
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: '72', Arial, Helvetica, sans-serif;
+}
+
+/* Component container and UI Area must fill space */
+body > div,
+[data-sap-ui-component],
+#container-analytics\.dashboard,
+#container-analytics\.dashboard-uiarea,
+.sapUiBody {
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
+/* FlexibleColumnLayout full height */
+.sapFFlexibleColumnLayout {
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
+/* Ensure pages within FCL columns fill their containers */
+.sapFFlexibleColumnLayout .sapMPage {
+  height: 100%;
+}
+
+/* SAP Fiori color palette */
+:root {
+  --sapui5-blue: #0854a0;
+  --sapui5-green: #107e3e;
+  --sapui5-orange: #e26800;
+  --sapui5-red: #bb0000;
+  --sapui5-purple: #91007b;
+  --sapui5-gray: #6a6d70;
+}
+
+/* Custom button styling */
+.sapMBtn.sapMBtnEmphasized {
+  background-color: var(--sapui5-blue);
+}
+
+/* Master list item hover effect */
+.sapMSLI:hover {
+  background-color: rgba(8, 84, 160, 0.05);
+}
+
+/* Page padding adjustments */
+.sapUiResponsiveContentPadding {
+  padding: 1rem;
+}
+
+/* Message strip customization */
+.sapMMsgStrip {
+  margin: 0.5rem 0;
+}
+
+/* Title spacing */
+.sapMTitle {
+  margin-bottom: 1rem;
+}
+
+/* VBox spacing utilities */
+.sapUiMediumMarginTop {
+  margin-top: 2rem;
+}
+
+.sapUiMediumMarginBottom {
+  margin-bottom: 2rem;
+}
+
+.sapUiSmallMargin {
+  margin: 1rem;
+}
+
+.sapUiSmallMarginTop {
+  margin-top: 1rem;
+}
+
+.sapUiSmallMarginBottom {
+  margin-bottom: 1rem;
+}
+
+.sapUiTinyMarginTop {
+  margin-top: 0.5rem;
+}
+
+.sapUiTinyMarginBottom {
+  margin-bottom: 0.5rem;
+}
+
+/* Panel customization */
+.sapMPanel {
+  border-radius: 0.25rem;
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+/* FileUploader styling */
+.sapMFUp {
+  width: 100%;
+}
+
+/* Chart containers */
+.chart-container {
+  position: relative;
+  height: 400px;
+  margin: 1rem 0;
+}
+
+/* KPI card styling */
+.kpi-card {
+  padding: 1rem;
+  border-left: 4px solid var(--sapui5-blue);
+  background-color: #f5f5f5;
+  border-radius: 0.25rem;
+}
+
+.kpi-card.success {
+  border-left-color: var(--sapui5-green);
+}
+
+.kpi-card.warning {
+  border-left-color: var(--sapui5-orange);
+}
+
+.kpi-card.error {
+  border-left-color: var(--sapui5-red);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .sapUiResponsiveContentPadding {
+    padding: 0.5rem;
+  }
+
+  .chart-container {
+    height: 300px;
+  }
+}
+
+/* Loading indicator */
+.sapUiBusyIndicator {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Custom colors for charts */
+.chart-blue { color: var(--sapui5-blue); }
+.chart-green { color: var(--sapui5-green); }
+.chart-orange { color: var(--sapui5-orange); }
+.chart-red { color: var(--sapui5-red); }
+.chart-purple { color: var(--sapui5-purple); }
+.chart-gray { color: var(--sapui5-gray); }

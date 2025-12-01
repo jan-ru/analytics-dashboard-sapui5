@@ -1,0 +1,101 @@
+<mvc:View
+  controllerName="analytics.dashboard.controller.Ui5Components"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:f="sap.f"
+  xmlns:card="sap.f.cards"
+  displayBlock="true"
+  height="100%">
+
+  <Page
+    id="componentsPage"
+    title="UI5 Components Showcase"
+    showNavButton="false">
+
+    <content>
+      <ScrollContainer height="100%" vertical="true">
+        <VBox class="sapUiSmallMargin">
+
+          <Title
+            text="SAPUI5 Components"
+            level="H2"
+            class="sapUiSmallMarginBottom" />
+
+          <Text
+            text="Interactive showcase of SAPUI5 components"
+            class="sapUiMediumMarginBottom" />
+
+          <!-- Cards Section -->
+          <Title
+            text="Cards"
+            level="H3"
+            class="sapUiMediumMarginTop sapUiSmallMarginBottom" />
+
+          <HBox wrap="Wrap" justifyContent="Start">
+
+            <!-- Standard Card -->
+            <f:Card width="320px" class="sapUiSmallMarginEnd sapUiSmallMarginBottom">
+              <f:header>
+                <card:Header
+                  title="Standard Card"
+                  subtitle="Card with header and content"
+                  iconSrc="sap-icon://card" />
+              </f:header>
+              <f:content>
+                <VBox class="sapUiSmallMargin">
+                  <Text text="This is a standard SAP Fiori card component with header and content areas." />
+                </VBox>
+              </f:content>
+            </f:Card>
+
+            <!-- Numeric Card -->
+            <f:Card width="320px" class="sapUiSmallMarginEnd sapUiSmallMarginBottom">
+              <f:header>
+                <card:NumericHeader
+                  title="Sales Performance"
+                  subtitle="Current Quarter"
+                  number="1.5M"
+                  scale="USD"
+                  trend="Up"
+                  state="Good" />
+              </f:header>
+              <f:content>
+                <VBox class="sapUiSmallMargin">
+                  <Text text="Card with numeric header showing KPIs." />
+                </VBox>
+              </f:content>
+            </f:Card>
+
+          </HBox>
+
+          <!-- Inputs Section -->
+          <Title
+            text="Input Controls"
+            level="H3"
+            class="sapUiMediumMarginTop sapUiSmallMarginBottom" />
+
+          <VBox width="400px" class="sapUiSmallMarginBottom">
+            <Label text="Text Input" class="sapUiTinyMarginBottom" />
+            <Input
+              placeholder="Enter text..."
+              class="sapUiSmallMarginBottom" />
+
+            <Label text="Number Input" class="sapUiTinyMarginBottom" />
+            <Input
+              type="Number"
+              placeholder="Enter number..."
+              class="sapUiSmallMarginBottom" />
+
+            <Label text="Date Picker" class="sapUiTinyMarginBottom" />
+            <DatePicker
+              placeholder="Select date..."
+              class="sapUiSmallMarginBottom" />
+          </VBox>
+
+        </VBox>
+      </ScrollContainer>
+    </content>
+
+  </Page>
+
+</mvc:View>

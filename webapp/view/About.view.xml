@@ -1,0 +1,68 @@
+<mvc:View
+  controllerName="analytics.dashboard.controller.About"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:f="sap.f"
+  displayBlock="true"
+  height="100%">
+
+  <Page
+    id="aboutPage"
+    title="About"
+    showNavButton="false">
+
+    <content>
+      <VBox class="sapUiSmallMargin">
+
+        <Title
+          text="Analytics Dashboard"
+          level="H1"
+          class="sapUiMediumMarginBottom" />
+
+        <Text
+          text="A modern analytics dashboard built with SAPUI5"
+          class="sapUiSmallMarginBottom" />
+
+        <Title
+          text="Features"
+          level="H2"
+          class="sapUiMediumMarginTop sapUiSmallMarginBottom" />
+
+        <VBox class="sapUiSmallMarginBottom">
+          <Text text="" Excel file upload and processing" class="sapUiTinyMarginBottom" />
+          <Text text="" Interactive dashboard with KPI tiles" class="sapUiTinyMarginBottom" />
+          <Text text="" Multiple chart types (Bar, Line, Pie, Doughnut)" class="sapUiTinyMarginBottom" />
+          <Text text="" SAP Fiori tiles showcase" class="sapUiTinyMarginBottom" />
+          <Text text="" UI5 components showcase" class="sapUiTinyMarginBottom" />
+          <Text text="" SAP icons and colors library" class="sapUiTinyMarginBottom" />
+          <Text text="" Data table with sorting and filtering" class="sapUiTinyMarginBottom" />
+          <Text text="" Excel export functionality" class="sapUiTinyMarginBottom" />
+          <Text text="" Responsive design with FlexibleColumnLayout" class="sapUiTinyMarginBottom" />
+        </VBox>
+
+        <Title
+          text="Technology Stack"
+          level="H2"
+          class="sapUiMediumMarginTop sapUiSmallMarginBottom" />
+
+        <VBox class="sapUiSmallMarginBottom">
+          <Text text="" SAPUI5 Framework" class="sapUiTinyMarginBottom" />
+          <Text text="" SAP Fiori Design Guidelines" class="sapUiTinyMarginBottom" />
+          <Text text="" Chart.js for data visualization" class="sapUiTinyMarginBottom" />
+          <Text text="" ExcelJS for Excel processing" class="sapUiTinyMarginBottom" />
+          <Text text="" FlexibleColumnLayout for responsive navigation" class="sapUiTinyMarginBottom" />
+        </VBox>
+
+        <Title
+          text="Version"
+          level="H2"
+          class="sapUiMediumMarginTop sapUiSmallMarginBottom" />
+
+        <Text text="Version 2.0.0" class="sapUiSmallMarginBottom" />
+
+      </VBox>
+    </content>
+
+  </Page>
+
+</mvc:View>

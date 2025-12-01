@@ -57,6 +57,25 @@ function handleHashChange(hash) {
 
   console.log('📍 Route changed:', route);
 
+  // DEBUG: Check content element before routing
+  const content = document.getElementById('content');
+  console.log('🔍 Content element check:', {
+    exists: !!content,
+    element: content,
+    offsetParent: content?.offsetParent,
+    dimensions: {
+      offsetWidth: content?.offsetWidth,
+      offsetHeight: content?.offsetHeight,
+      clientWidth: content?.clientWidth,
+      clientHeight: content?.clientHeight
+    },
+    computedStyle: content ? {
+      display: window.getComputedStyle(content).display,
+      visibility: window.getComputedStyle(content).visibility,
+      opacity: window.getComputedStyle(content).opacity
+    } : null
+  });
+
   // Find and execute the route handler
   const handler = routeConfig[route];
   if (handler) {
@@ -64,6 +83,17 @@ function handleHashChange(hash) {
       console.log('🎯 Executing route handler for:', route);
       handler();
       console.log('✅ Route handler completed for:', route);
+
+      // DEBUG: Check content after route handler execution
+      setTimeout(() => {
+        const contentAfter = document.getElementById('content');
+        console.log('🔍 Content element after handler (100ms later):', {
+          exists: !!contentAfter,
+          childElementCount: contentAfter?.childElementCount,
+          innerHTML_length: contentAfter?.innerHTML.length,
+          firstChild: contentAfter?.firstChild
+        });
+      }, 100);
     } catch (error) {
       console.error('❌ Route handler error:', error);
       showError('Failed to load page: ' + error.message);
@@ -104,15 +134,23 @@ export function initRouter() {
       // Set up event listener for hash changes
       hashChanger.attachEvent('hashChanged', function(oEvent) {
         const newHash = oEvent.getParameter('newHash');
+        console.log('🔔 HashChanged event:', newHash);
         handleHashChange(newHash);
       });
 
       // Initialize with current hash
       const currentHash = hashChanger.getHash();
+      console.log('🔍 Current hash on init:', currentHash);
+
       if (!currentHash) {
-        // No hash, navigate to home
+        // No hash, set to upload and handle immediately
+        console.log('📝 Setting initial hash to: upload');
         hashChanger.setHash('upload');
+        // Manually trigger the route handler since event might not fire on initial set
+        handleHashChange('upload');
       } else {
+        // Handle current hash immediately
+        console.log('📝 Handling existing hash:', currentHash);
         handleHashChange(currentHash);
       }
 

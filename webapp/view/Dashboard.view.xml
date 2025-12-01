@@ -1,0 +1,170 @@
+<mvc:View
+  controllerName="analytics.dashboard.controller.Dashboard"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:f="sap.f"
+  xmlns:card="sap.f.cards"
+  displayBlock="true"
+  height="100%">
+
+  <Page
+    id="dashboardPage"
+    title="Analytics Dashboard - Overview"
+    showNavButton="false">
+
+    <headerContent>
+      <Button
+        id="exportButton"
+        text="Export to Excel"
+        icon="sap-icon://excel-attachment"
+        type="Emphasized"
+        press=".onExportToExcel" />
+    </headerContent>
+
+    <content>
+      <VBox class="sapUiSmallMargin">
+
+        <!-- File Info Message -->
+        <MessageStrip
+          id="fileInfo"
+          text="{appData>/fileName}"
+          type="Information"
+          showIcon="true"
+          class="sapUiSmallMarginBottom" />
+
+        <!-- Navigation Cards -->
+        <Title
+          text="Quick Navigation"
+          level="H2"
+          class="sapUiMediumMarginTop sapUiSmallMarginBottom" />
+
+        <HBox
+          justifyContent="Start"
+          wrap="Wrap"
+          class="sapUiSmallMarginBottom">
+
+          <!-- Chart Visualizations Card -->
+          <f:Card
+            width="320px"
+            class="sapUiSmallMarginEnd sapUiSmallMarginBottom">
+            <f:header>
+              <card:Header
+                title="Chart Visualizations"
+                subtitle="View bar, line, pie, and doughnut charts"
+                iconSrc="sap-icon://line-chart" />
+            </f:header>
+            <f:content>
+              <VBox class="sapUiSmallMargin">
+                <Text text="Explore your data through interactive charts and visualizations." />
+                <Button
+                  text="Go to Charts"
+                  icon="sap-icon://line-chart"
+                  type="Emphasized"
+                  press=".onNavToCharts"
+                  class="sapUiTinyMarginTop" />
+              </VBox>
+            </f:content>
+          </f:Card>
+
+          <!-- SAP Tiles Card -->
+          <f:Card
+            width="320px"
+            class="sapUiSmallMarginEnd sapUiSmallMarginBottom">
+            <f:header>
+              <card:Header
+                title="SAP Fiori Tiles"
+                subtitle="Explore all tile types"
+                iconSrc="sap-icon://grid" />
+            </f:header>
+            <f:content>
+              <VBox class="sapUiSmallMargin">
+                <Text text="Discover various SAP Fiori tile designs and patterns." />
+                <Button
+                  text="View Tiles"
+                  icon="sap-icon://grid"
+                  type="Emphasized"
+                  press=".onNavToTiles"
+                  class="sapUiTinyMarginTop" />
+              </VBox>
+            </f:content>
+          </f:Card>
+
+          <!-- Data Table Card -->
+          <f:Card
+            width="320px"
+            class="sapUiSmallMarginBottom">
+            <f:header>
+              <card:Header
+                title="Data Table"
+                subtitle="View, sort, and filter your data"
+                iconSrc="sap-icon://table-view" />
+            </f:header>
+            <f:content>
+              <VBox class="sapUiSmallMargin">
+                <Text text="Browse your data in a detailed table view with filtering." />
+                <Button
+                  text="Open Table"
+                  icon="sap-icon://table-view"
+                  type="Emphasized"
+                  press=".onNavToData"
+                  class="sapUiTinyMarginTop" />
+              </VBox>
+            </f:content>
+          </f:Card>
+
+        </HBox>
+
+        <!-- Data Summary -->
+        <Title
+          text="Data Summary"
+          level="H2"
+          class="sapUiMediumMarginTop sapUiSmallMarginBottom" />
+
+        <HBox
+          justifyContent="Start"
+          wrap="Wrap">
+
+          <!-- Total Rows Tile -->
+          <GenericTile
+            header="Total Rows"
+            subheader="{appData>/metrics/rowCount}"
+            press=".onNavToData"
+            class="sapUiSmallMarginEnd sapUiSmallMarginBottom">
+            <tileContent>
+              <TileContent>
+                <content>
+                  <NumericContent
+                    value="{appData>/metrics/rowCount}"
+                    icon="sap-icon://table-row"
+                    valueColor="Good" />
+                </content>
+              </TileContent>
+            </tileContent>
+          </GenericTile>
+
+          <!-- Total Columns Tile -->
+          <GenericTile
+            header="Total Columns"
+            subheader="{appData>/metrics/columnCount}"
+            press=".onNavToData"
+            class="sapUiSmallMarginEnd sapUiSmallMarginBottom">
+            <tileContent>
+              <TileContent>
+                <content>
+                  <NumericContent
+                    value="{appData>/metrics/columnCount}"
+                    icon="sap-icon://table-column"
+                    valueColor="Neutral" />
+                </content>
+              </TileContent>
+            </tileContent>
+          </GenericTile>
+
+        </HBox>
+
+      </VBox>
+    </content>
+
+  </Page>
+
+</mvc:View>

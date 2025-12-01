@@ -26,6 +26,9 @@ async function initApp() {
   // Set up navigation
   setupNavigation();
 
+  // Set up DOM mutation observer for debugging
+  setupDOMObserver();
+
   console.log('✅ Application initialized successfully');
   console.log('📊 Ready to analyze data!');
 }
@@ -65,6 +68,54 @@ function waitForOpenUI5() {
       }
     }
   });
+}
+
+/**
+ * Set up DOM mutation observer for debugging
+ */
+function setupDOMObserver() {
+  const content = document.getElementById('content');
+  if (!content) {
+    console.error('❌ Content element not found for mutation observer');
+    return;
+  }
+
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      console.log('🔄 DOM Mutation detected:', {
+        type: mutation.type,
+        target: mutation.target.id || mutation.target.className,
+        addedNodes: mutation.addedNodes.length,
+        removedNodes: mutation.removedNodes.length,
+        attributeName: mutation.attributeName,
+        oldValue: mutation.oldValue
+      });
+
+      if (mutation.removedNodes.length > 0) {
+        console.warn('⚠️ Nodes were REMOVED from DOM!', mutation.removedNodes);
+      }
+    });
+  });
+
+  observer.observe(content, {
+    childList: true,
+    subtree: true,
+    attributes: true,
+    attributeOldValue: true,
+    characterData: true
+  });
+
+  // Also observe the parent container
+  const container = document.querySelector('.container');
+  if (container) {
+    observer.observe(container, {
+      childList: true,
+      attributes: true,
+      attributeOldValue: true
+    });
+  }
+
+  console.log('👁️ DOM observer attached to content element');
 }
 
 /**

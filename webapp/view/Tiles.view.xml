@@ -1,0 +1,113 @@
+<mvc:View
+  controllerName="analytics.dashboard.controller.Tiles"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc"
+  displayBlock="true"
+  height="100%">
+
+  <Page
+    id="tilesPage"
+    title="SAP Fiori Tiles Showcase"
+    showNavButton="false">
+
+    <content>
+      <ScrollContainer height="100%" vertical="true">
+        <VBox class="sapUiSmallMargin">
+
+          <Title
+            text="SAP Fiori Tile Types"
+            level="H2"
+            class="sapUiSmallMarginBottom" />
+
+          <Text
+            text="Explore various SAP Fiori tile designs and patterns"
+            class="sapUiMediumMarginBottom" />
+
+          <!-- Tiles Grid -->
+          <HBox wrap="Wrap" justifyContent="Start">
+
+            <!-- Analytical Tile -->
+            <GenericTile
+              header="Revenue"
+              subheader="This Month"
+              frameType="TwoByOne"
+              press=".onTilePress"
+              class="sapUiTinyMargin">
+              <tileContent>
+                <TileContent unit="USD">
+                  <content>
+                    <NumericContent
+                      value="125K"
+                      icon="sap-icon://revenue"
+                      valueColor="Good"
+                      indicator="Up"
+                      withMargin="false" />
+                  </content>
+                </TileContent>
+              </tileContent>
+            </GenericTile>
+
+            <!-- Numeric Tile -->
+            <GenericTile
+              header="Active Users"
+              subheader="Last 24 hours"
+              press=".onTilePress"
+              class="sapUiTinyMargin">
+              <tileContent>
+                <TileContent>
+                  <content>
+                    <NumericContent
+                      value="1,234"
+                      icon="sap-icon://customer"
+                      valueColor="Neutral" />
+                  </content>
+                </TileContent>
+              </tileContent>
+            </GenericTile>
+
+            <!-- KPI Tile -->
+            <GenericTile
+              header="Conversion Rate"
+              subheader="Target: 25%"
+              press=".onTilePress"
+              class="sapUiTinyMargin">
+              <tileContent>
+                <TileContent>
+                  <content>
+                    <NumericContent
+                      value="28.5%"
+                      icon="sap-icon://accept"
+                      valueColor="Good"
+                      indicator="Up" />
+                  </content>
+                </TileContent>
+              </tileContent>
+            </GenericTile>
+
+            <!-- Feed Tile -->
+            <GenericTile
+              header="Notifications"
+              subheader="Recent updates"
+              press=".onTilePress"
+              class="sapUiTinyMargin">
+              <tileContent>
+                <TileContent>
+                  <content>
+                    <NumericContent
+                      value="5"
+                      icon="sap-icon://bell"
+                      valueColor="Critical" />
+                  </content>
+                </TileContent>
+              </tileContent>
+            </GenericTile>
+
+          </HBox>
+
+        </VBox>
+      </ScrollContainer>
+    </content>
+
+  </Page>
+
+</mvc:View>

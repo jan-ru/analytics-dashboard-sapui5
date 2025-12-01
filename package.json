@@ -1,21 +1,40 @@
 {
-  "name": "sapui5-analytics-dashboard",
-  "version": "0.5.0",
+  "name": "analytics.dashboard",
+  "version": "0.0.1",
   "description": "Analytics Dashboard with 15 Tiles, 6 Chart Types, SAP Icons & Colors",
   "type": "module",
   "scripts": {
     "test": "deno test --allow-read",
     "test:watch": "deno test --allow-read --watch",
     "test:coverage": "deno test --allow-read --coverage=coverage",
-    "test:coverage-report": "deno coverage coverage --lcov --output=coverage.lcov"
+    "test:coverage-report": "deno coverage coverage --lcov --output=coverage.lcov",
+    "start": "fiori run --open \"test/flpSandbox.html?sap-ui-xx-viewCache=false#app-tile\"",
+    "start-local": "fiori run --config ./ui5-local.yaml --open \"test/flpSandboxMockServer.html?sap-ui-xx-viewCache=false#app-tile\"",
+    "start-noflp": "fiori run --open \"index.html?sap-ui-xx-viewCache=false\"",
+    "start-variants-management": "fiori run --open \"preview.html?sap-ui-xx-viewCache=false&fiori-tools-rta-mode=true&sap-ui-rta-skip-flex-validation=true#preview-app\"",
+    "build": "ui5 build -a --clean-dest --include-task=generateCachebusterInfo",
+    "deploy": "fiori verify",
+    "deploy-config": "fiori add deploy-config",
+    "start-mock": "fiori run --config ./ui5-mock.yaml --open \"test/flpSandbox.html?sap-ui-xx-viewCache=false#app-tile\""
   },
   "keywords": [
-    "sapui5",
     "fiori",
     "analytics",
     "dashboard",
-    "excel"
+    "excel",
+    "ui5",
+    "openui5",
+    "sapui5"
   ],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "private": true,
+  "sapuxLayer": "CUSTOMER_BASE",
+  "main": "webapp/index.html",
+  "devDependencies": {
+    "@sap-ux/ui5-middleware-fe-mockserver": "^2.3.23",
+    "@sap/ux-ui5-tooling": "1",
+    "@ui5/cli": "^4.0.0",
+    "rimraf": "6.0.1"
+  }
 }

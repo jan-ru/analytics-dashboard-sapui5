@@ -1,0 +1,95 @@
+<mvc:View
+  controllerName="analytics.dashboard.controller.SapColors"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc"
+  displayBlock="true"
+  height="100%">
+
+  <Page
+    id="colorsPage"
+    title="SAP Color Palette"
+    showNavButton="false">
+
+    <content>
+      <ScrollContainer height="100%" vertical="true">
+        <VBox class="sapUiSmallMargin">
+
+          <Title
+            text="SAP Fiori Color Palette"
+            level="H2"
+            class="sapUiSmallMarginBottom" />
+
+          <Text
+            text="Explore SAP Fiori color schemes with accessibility guidelines"
+            class="sapUiMediumMarginBottom" />
+
+          <!-- Color Sections -->
+          <Title text="Semantic Colors" level="H3" class="sapUiSmallMarginTop sapUiTinyMarginBottom" />
+
+          <HBox wrap="Wrap" class="sapUiSmallMarginBottom">
+            <VBox class="sapUiTinyMargin">
+              <Panel headerText="Positive" width="150px">
+                <VBox class="sapUiSmallMargin">
+                  <Text text="#107E3E" />
+                  <Button text="Good" type="Accept" />
+                </VBox>
+              </Panel>
+            </VBox>
+
+            <VBox class="sapUiTinyMargin">
+              <Panel headerText="Critical" width="150px">
+                <VBox class="sapUiSmallMargin">
+                  <Text text="#E9730C" />
+                  <Button text="Warning" type="Attention" />
+                </VBox>
+              </Panel>
+            </VBox>
+
+            <VBox class="sapUiTinyMargin">
+              <Panel headerText="Negative" width="150px">
+                <VBox class="sapUiSmallMargin">
+                  <Text text="#BB0000" />
+                  <Button text="Error" type="Reject" />
+                </VBox>
+              </Panel>
+            </VBox>
+
+            <VBox class="sapUiTinyMargin">
+              <Panel headerText="Neutral" width="150px">
+                <VBox class="sapUiSmallMargin">
+                  <Text text="#6A6D70" />
+                  <Button text="Neutral" type="Default" />
+                </VBox>
+              </Panel>
+            </VBox>
+          </HBox>
+
+          <Title text="Action Colors" level="H3" class="sapUiMediumMarginTop sapUiTinyMarginBottom" />
+
+          <HBox wrap="Wrap">
+            <VBox class="sapUiTinyMargin">
+              <Panel headerText="Emphasized" width="150px">
+                <VBox class="sapUiSmallMargin">
+                  <Text text="#0070F2" />
+                  <Button text="Emphasized" type="Emphasized" />
+                </VBox>
+              </Panel>
+            </VBox>
+
+            <VBox class="sapUiTinyMargin">
+              <Panel headerText="Transparent" width="150px">
+                <VBox class="sapUiSmallMargin">
+                  <Text text="Transparent" />
+                  <Button text="Transparent" type="Transparent" />
+                </VBox>
+              </Panel>
+            </VBox>
+          </HBox>
+
+        </VBox>
+      </ScrollContainer>
+    </content>
+
+  </Page>
+
+</mvc:View>

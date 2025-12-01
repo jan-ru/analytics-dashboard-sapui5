@@ -40,3 +40,14 @@ temp/
 # Sample data (optional - uncomment if you don't want to commit sample files)
 # *.xlsx
 # *.xls
+
+node_modules/
+dist/
+.scp/
+.env
+Makefile*.mta
+mta_archives
+mta-*
+resources
+archive.zip
+.*_mta_build_tmp

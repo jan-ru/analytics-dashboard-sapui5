@@ -1,0 +1,29 @@
+<mvc:View
+  controllerName="analytics.dashboard.controller.App"
+  xmlns="sap.f"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:m="sap.m"
+  displayBlock="true"
+  height="100%">
+
+  <FlexibleColumnLayout
+    id="layout"
+    stateChange=".onStateChanged"
+    layout="{appData>/layout}"
+    backgroundDesign="Solid">
+
+    <beginColumnPages>
+      <!-- Master/Navigation view loaded by router -->
+    </beginColumnPages>
+
+    <midColumnPages>
+      <!-- Main content views loaded by router -->
+    </midColumnPages>
+
+    <endColumnPages>
+      <!-- Detail views loaded by router (for drill-down) -->
+    </endColumnPages>
+
+  </FlexibleColumnLayout>
+
+</mvc:View>
