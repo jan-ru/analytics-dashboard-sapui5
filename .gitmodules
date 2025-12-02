@@ -1,0 +1,6 @@
+[submodule "simple"]
+	path = simple
+	url = https://github.com/jan-ru/analytics-dashboard-legacy.git
+[submodule "shared"]
+	path = shared
+	url = https://github.com/jan-ru/analytics-dashboard-shared.git
