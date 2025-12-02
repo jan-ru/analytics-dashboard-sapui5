@@ -1,6 +1,8 @@
-# Analytics Dashboard - SAPUI5 Application
+# Analytics Dashboard - Enterprise (SAPUI5)
 
-A professional analytics dashboard application built with SAPUI5 framework using the Model-View-Controller (MVC) pattern and FlexibleColumnLayout for responsive navigation. Upload Excel files, visualize data through interactive components, and explore SAP Fiori design patterns.
+**Full-featured enterprise analytics dashboard** built with SAPUI5 framework using the Model-View-Controller (MVC) pattern and FlexibleColumnLayout for responsive navigation.
+
+> 💡 **Looking for a simpler version?** Check out [analytics-dashboard-legacy](https://github.com/yourusername/analytics-dashboard-legacy) for the lightweight UI5 Web Components version with zero build tools.
 
 ## Features
 
@@ -328,6 +330,29 @@ This application follows SAP Fiori design guidelines:
 - **Coherent**: Consistent design patterns
 - **Simple**: Focus on user tasks
 - **Delightful**: Smooth animations and interactions
+
+## Comparison: Enterprise vs. Legacy
+
+| Feature | Enterprise (This Version) | Legacy (Web Components) |
+|---------|-------------------------|-------------------------|
+| **Setup** | npm install, build tools | Zero config, CDN-based |
+| **Architecture** | MVC, component-based | Procedural, direct DOM |
+| **UI Framework** | SAPUI5 1.108+ | UI5 Web Components v1.24 |
+| **Navigation** | FlexibleColumnLayout | Simple hash routing |
+| **Build Tools** | ✅ UI5 Tooling | ❌ None required |
+| **i18n** | ✅ Full i18n support | ❌ Not supported |
+| **Routing** | Advanced with targets | Basic hash-based |
+| **State Management** | Component models | Global object |
+| **Drill-Down** | ✅ 3-column detail views | ❌ Single level |
+| **Best For** | Enterprise applications | Prototypes, simple apps |
+| **Learning Curve** | ⭐⭐⭐ Moderate | ⭐ Easy |
+
+## Related Repositories
+
+- **[analytics-dashboard-legacy](https://github.com/yourusername/analytics-dashboard-legacy)** - Simple UI5 Web Components version
+- **[analytics-dashboard-shared](https://github.com/yourusername/analytics-dashboard-shared)** - Shared utilities package
+
+Both versions share the same core business logic through the shared utilities package.
 
 ## License
 
